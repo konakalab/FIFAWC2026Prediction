@@ -140,6 +140,14 @@ if df is not None:
                 xaxis_title=None,
                 yaxis_title=None,
                 margin=dict(l=10, r=10, t=10, b=10),
+                # 凡例をグラフ上部に水平配置
+                legend=dict(
+                    orientation="h",
+                    yanchor="bottom",
+                    y=1.02,
+                    xanchor="right",
+                    x=1
+                ),
                 legend_title=None,
                 barmode='stack',
                 xaxis=dict(tickfont=dict(size=20)),
