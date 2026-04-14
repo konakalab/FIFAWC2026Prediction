@@ -167,7 +167,6 @@ def show_h2h_visuals():
     
     st.write("---")
     st.subheader("📊 グループステージ各試合の勝率予測")
-    st.caption("左側の国名コード：TeamAの勝率 | 中央：引き分け | 右側の国名コード：TeamBの勝率")
 
     # グループごとにタブで表示
     groups = sorted(df_h2h['Group'].unique())
@@ -178,65 +177,66 @@ def show_h2h_visuals():
             group_matches = df_h2h[df_h2h['Group'] == group_name]
             
             for idx, row in group_matches.iterrows():
-                # 3色の帯グラフ（スタックバー）を作成
+                # 3色の帯グラフ（スタックバー）
                 fig = go.Figure()
 
-                # Team A Win (緑)
+                # Team A 勝率
                 fig.add_trace(go.Bar(
-                    x=[row['pWin']],
-                    y=["Match"],
+                    x=[row['pWin']], y=["Match"],
                     orientation='h',
-                    marker=dict(color='#2E7D32'), # 濃い緑
+                    marker=dict(color='#2E7D32'),
+                    text=f"{row['pWin']:.1%}", textposition='inside',
                     name=f"{row['CodeA']} 勝",
                     hovertemplate=f"{row['CodeA']} 勝: %{{x:.1%}}<extra></extra>"
                 ))
 
-                # Draw (灰色または黄色)
+                # 引き分け
                 fig.add_trace(go.Bar(
-                    x=[row['pDraw']],
-                    y=["Match"],
+                    x=[row['pDraw']], y=["Match"],
                     orientation='h',
-                    marker=dict(color='#BDBDBD'), # グレー
+                    marker=dict(color='#BDBDBD'),
+                    text=f"{row['pDraw']:.1%}", textposition='inside',
                     name="引分",
                     hovertemplate="引き分け: %{x:.1%}<extra></extra>"
                 ))
 
-                # Team B Win (赤)
+                # Team B 勝率
                 fig.add_trace(go.Bar(
-                    x=[row['pLose']],
-                    y=["Match"],
+                    x=[row['pLose']], y=["Match"],
                     orientation='h',
-                    marker=dict(color='#C62828'), # 濃い赤
+                    marker=dict(color='#C62828'),
+                    text=f"{row['pLose']:.1%}", textposition='inside',
                     name=f"{row['CodeB']} 勝",
                     hovertemplate=f"{row['CodeB']} 勝: %{{x:.1%}}<extra></extra>"
                 ))
 
-                # レイアウト設定：国名を左右に配置
                 fig.update_layout(
                     barmode='stack',
-                    height=120,
-                    margin=dict(l=50, r=50, t=30, b=20),
+                    height=140, # 少し高さを出して日付との間隔を確保
+                    margin=dict(l=60, r=60, t=50, b=20), # 上部余白(t=50)を広げて日付を離す
                     showlegend=False,
                     xaxis=dict(showticklabels=False, range=[0, 1], fixedrange=True),
                     yaxis=dict(showticklabels=False, fixedrange=True),
                     paper_bgcolor='rgba(0,0,0,0)',
                     plot_bgcolor='rgba(0,0,0,0)',
-                    # 左右に国名コードを配置するアノテーション
                     annotations=[
+                        # 左側：国名コード (サイズを20に拡大)
                         dict(
-                            x=-0.02, y=0.5, xref="paper", yref="paper",
+                            x=-0.05, y=0.5, xref="paper", yref="paper",
                             text=f"<b>{row['CodeA']}</b>", showarrow=False,
-                            xanchor="right", font=dict(size=16)
+                            xanchor="right", font=dict(size=20)
                         ),
+                        # 右側：国名コード (サイズを20に拡大)
                         dict(
-                            x=1.02, y=0.5, xref="paper", yref="paper",
+                            x=1.05, y=0.5, xref="paper", yref="paper",
                             text=f"<b>{row['CodeB']}</b>", showarrow=False,
-                            xanchor="left", font=dict(size=16)
+                            xanchor="left", font=dict(size=20)
                         ),
+                        # 日付：帯からさらに上に離して配置 (y=1.35)
                         dict(
-                            x=0.5, y=1.1, xref="paper", yref="paper",
-                            text=f"{row['Date']}", showarrow=False,
-                            font=dict(size=12, color="gray")
+                            x=0.5, y=1.35, xref="paper", yref="paper",
+                            text=f"📅 {row['Date']}", showarrow=False,
+                            font=dict(size=14, color="#555555")
                         )
                     ]
                 )
