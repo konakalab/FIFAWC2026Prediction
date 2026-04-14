@@ -235,13 +235,7 @@ def show_h2h_visuals():
                             text=f"<b>{row['CodeB']}</b>", showarrow=False,
                             xanchor="left", xshift=10, font=dict(size=20)
                         ),
-                        # 日付とリンクのアイコン（テキストとして埋め込み）
-                        dict(
-                            x=0.5, y=1.35, xref="paper", yref="paper",
-                            text=f"📅 {row['Date']} <a href='{row['matchURL']}' target='_blank'>↗</a>",
-                            showarrow=False,
-                            font=dict(size=14, color="#555555")
-                        )
+                        
                     ]
                 )
                 
