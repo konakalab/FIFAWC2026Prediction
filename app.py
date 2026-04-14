@@ -24,6 +24,12 @@ if df is not None:
     st.set_page_config(page_title="FIFA Predictions", layout="wide")
     st.title("⚽ FIFAワールドカップ2026予測")
 
+    if df_train is not None:
+         df_train['date'] = pd.to_datetime(df_train['date'])
+         start_date = df_train['date'].min().strftime('%Y-%m-%d')
+         end_date = df_train['date'].max().strftime('%Y-%m-%d')
+         st.info(f"モデル学習期間: {start_date} ～ {end_date}")
+
     st.divider()
     st.subheader(f"グループステージ順位予測")
     
