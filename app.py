@@ -23,6 +23,7 @@ df_train = load_train_data()
 if df is not None:
     st.set_page_config(page_title="FIFA Predictions", layout="wide")
     st.title("⚽ FIFAワールドカップ2026予測")
+    st.caption(f"Developed by [@konakalab](https://x.com/konakalab)")
 
     # 学習期間の表示
     if df_train is not None:
