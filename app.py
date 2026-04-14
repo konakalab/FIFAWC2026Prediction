@@ -43,7 +43,7 @@ if df is not None:
 
     # 指定された列のみを表示し、ソート可能なテーブルとして描画
     display_columns = [
-        'Team', 'Group', 'isHome', 'Serial', 'Code', 
+        'Team', 'Code', 'Group', 'isHome', 
         'Rating', 
         'StInGS_1', 'StInGS_2', 'StInGS_3', 'StInGS_4'
     ]
@@ -53,7 +53,11 @@ if df is not None:
         df[display_columns],
         use_container_width=True,
         column_config={
-            "Rating": st.column_config.NumberColumn(format="%.2f"),
+            "Team": st.column_config.NumberColumn("チーム名"),
+            "Group": st.column_config.NumberColumn("グループ"),
+            "Home": st.column_config.NumberColumn("開催国"),
+            
+            "Rating": st.column_config.NumberColumn("評価値",format="%.2f"),
             "RatingOnScore": st.column_config.NumberColumn(format="%.2f"),
             "StInGS_1": st.column_config.NumberColumn("1位確率", format="%.3f"),
             "StInGS_2": st.column_config.NumberColumn("2位確率", format="%.3f"),
