@@ -109,9 +109,11 @@ if df is not None:
 
     for i, group_name in enumerate(groups):
         with tabs[i]:
-            # --- タブ内上部：グループステージ順位予測の帯グラフ ---
-            st.subheader(f"Group {group_name} 順位予測")
+           # --- タブ内上部：グループステージ順位予測の帯グラフ ---
             group_df = df[df['Group'] == group_name].copy()
+            # チームのCodeをリスト化して "/" で結合
+            team_codes = "/".join(group_df['Code'].tolist())
+            st.subheader(f"Group {group_name} 順位予測 ({team_codes})")
             
             plot_df = group_df.melt(
                 id_vars=['Code'], 
