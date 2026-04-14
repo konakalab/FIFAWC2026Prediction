@@ -153,7 +153,7 @@ if df is not None:
                 group_matches = df_h2h[df_h2h['Group'] == group_name]
                 
                 for idx, row in group_matches.iterrows():
-                    st.write(f"**{row['CodeA']} vs {row['CodeB']}**")
+                    st.write(f"**{row['Date']} {row['TeamA']} vs {row['TeamB']}**")
                     
                     fig_h2h = go.Figure()
                     fig_h2h.add_trace(go.Bar(
