@@ -176,6 +176,14 @@ def show_h2h_visuals():
             group_matches = df_h2h[df_h2h['Group'] == group_name]
             
             for idx, row in group_matches.iterrows():
+                # --- ヘッダー部分（日付と外部リンク） ---
+                # カラムを使って日付の横にリンクを配置
+                col_date, col_link = st.columns([0.85, 0.15])
+                with col_date:
+                    # グラフの上部に余白を作るためのスペーサー
+                    st.write("") 
+                
+                # --- Plotly 帯グラフの作成 ---
                 fig = go.Figure()
 
                 # Team A 勝率 (緑)
@@ -207,33 +215,31 @@ def show_h2h_visuals():
 
                 fig.update_layout(
                     barmode='stack',
-                    height=140,
-                    # 左右の余白(l, r)を少し広げつつ、アノテーションを帯に寄せます
-                    margin=dict(l=70, r=70, t=50, b=20),
+                    height=120,
+                    margin=dict(l=70, r=70, t=30, b=20),
                     showlegend=False,
                     xaxis=dict(showticklabels=False, range=[0, 1], fixedrange=True),
                     yaxis=dict(showticklabels=False, fixedrange=True),
                     paper_bgcolor='rgba(0,0,0,0)',
                     plot_bgcolor='rgba(0,0,0,0)',
                     annotations=[
-                        # 左側：国名コード (x=0に寄せ、anchorをrightに)
+                        # 左側：国名コード
                         dict(
                             x=0, y=0.5, xref="x", yref="paper",
                             text=f"<b>{row['CodeA']}</b>", showarrow=False,
-                            xanchor="right", xshift=-10, # 帯の左端から10px左に配置
-                            font=dict(size=20)
+                            xanchor="right", xshift=-10, font=dict(size=20)
                         ),
-                        # 右側：国名コード (x=1に寄せ、anchorをleftに)
+                        # 右側：国名コード
                         dict(
                             x=1, y=0.5, xref="x", yref="paper",
                             text=f"<b>{row['CodeB']}</b>", showarrow=False,
-                            xanchor="left", xshift=10, # 帯の右端から10px右に配置
-                            font=dict(size=20)
+                            xanchor="left", xshift=10, font=dict(size=20)
                         ),
-                        # 日付
+                        # 日付とリンクのアイコン（テキストとして埋め込み）
                         dict(
-                            x=0.5, y=1.3, xref="paper", yref="paper",
-                            text=f"📅 {row['Date']}", showarrow=False,
+                            x=0.5, y=1.35, xref="paper", yref="paper",
+                            text=f"📅 {row['Date']} <a href='{row['matchURL']}' target='_blank'>🔗</a>",
+                            showarrow=False,
                             font=dict(size=14, color="#555555")
                         )
                     ]
