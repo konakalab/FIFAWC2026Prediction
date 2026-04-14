@@ -157,76 +157,93 @@ if df is not None:
         # グラフの表示
         st.plotly_chart(fig, use_container_width=True)
 
-# 1. 試合データの読み込み
-def load_h2h_data():
+def show_h2h_visuals():
     file_h2h = 'table_prediction_h2h.csv'
-    if os.path.exists(file_h2h):
-        return pd.read_csv(file_h2h)
-    return None
+    if not os.path.exists(file_h2h):
+        st.error(f"{file_h2h} が見つかりません。")
+        return
 
-df_h2h = load_h2h_data()
-
-if df_h2h is not None:
+    df_h2h = pd.read_csv(file_h2h)
+    
     st.write("---")
     st.subheader("📊 グループステージ各試合の勝率予測")
-    st.caption("※各行のバーは左から [TeamAの勝率 / 引き分け / TeamBの勝率] を表します")
+    st.caption("左側の国名コード：TeamAの勝率 | 中央：引き分け | 右側の国名コード：TeamBの勝率")
 
-    # グループごとにタブで分ける
+    # グループごとにタブで表示
     groups = sorted(df_h2h['Group'].unique())
-    tabs = st.tabs(groups)
+    tabs = st.tabs([f"Group {g}" for g in groups])
 
     for i, group_name in enumerate(groups):
         with tabs[i]:
             group_matches = df_h2h[df_h2h['Group'] == group_name]
             
             for idx, row in group_matches.iterrows():
-                # 3色の積み上げ棒グラフで勝率を可視化
-                fig_match = go.Figure()
-                
-                # Team A Win
-                fig_match.add_trace(go.Bar(
-                    y=[f"{row['TeamA']} vs {row['TeamB']}"],
+                # 3色の帯グラフ（スタックバー）を作成
+                fig = go.Figure()
+
+                # Team A Win (緑)
+                fig.add_trace(go.Bar(
                     x=[row['pWin']],
-                    name=f"{row['TeamA']} 勝利",
+                    y=["Match"],
                     orientation='h',
-                    marker=dict(color='#2E7D32'), # 緑
-                    hovertemplate=f"{row['TeamA']} Win: %{{x:.1%}}"
-                ))
-                
-                # Draw
-                fig_match.add_trace(go.Bar(
-                    y=[f"{row['TeamA']} vs {row['TeamB']}"],
-                    x=[row['pDraw']],
-                    name="引き分け",
-                    orientation='h',
-                    marker=dict(color='#FBC02D'), # 黄
-                    hovertemplate="Draw: %{x:.1%} "
-                ))
-                
-                # Team B Win (pLose)
-                fig_match.add_trace(go.Bar(
-                    y=[f"{row['TeamA']} vs {row['TeamB']}"],
-                    x=[row['pLose']],
-                    name=f"{row['TeamB']} 勝利",
-                    orientation='h',
-                    marker=dict(color='#C62828'), # 赤
-                    hovertemplate=f"{row['TeamB']} Win: %{{x:.1%}}"
+                    marker=dict(color='#2E7D32'), # 濃い緑
+                    name=f"{row['CodeA']} 勝",
+                    hovertemplate=f"{row['CodeA']} 勝: %{{x:.1%}}<extra></extra>"
                 ))
 
-                fig_match.update_layout(
+                # Draw (灰色または黄色)
+                fig.add_trace(go.Bar(
+                    x=[row['pDraw']],
+                    y=["Match"],
+                    orientation='h',
+                    marker=dict(color='#BDBDBD'), # グレー
+                    name="引分",
+                    hovertemplate="引き分け: %{x:.1%}<extra></extra>"
+                ))
+
+                # Team B Win (赤)
+                fig.add_trace(go.Bar(
+                    x=[row['pLose']],
+                    y=["Match"],
+                    orientation='h',
+                    marker=dict(color='#C62828'), # 濃い赤
+                    name=f"{row['CodeB']} 勝",
+                    hovertemplate=f"{row['CodeB']} 勝: %{{x:.1%}}<extra></extra>"
+                ))
+
+                # レイアウト設定：国名を左右に配置
+                fig.update_layout(
                     barmode='stack',
-                    height=100,
-                    margin=dict(l=10, r=10, t=10, b=10),
+                    height=120,
+                    margin=dict(l=50, r=50, t=30, b=20),
                     showlegend=False,
-                    xaxis=dict(showticklabels=False, range=[0, 1]),
-                    yaxis=dict(autorange="reversed"),
+                    xaxis=dict(showticklabels=False, range=[0, 1], fixedrange=True),
+                    yaxis=dict(showticklabels=False, fixedrange=True),
                     paper_bgcolor='rgba(0,0,0,0)',
                     plot_bgcolor='rgba(0,0,0,0)',
+                    # 左右に国名コードを配置するアノテーション
+                    annotations=[
+                        dict(
+                            x=-0.02, y=0.5, xref="paper", yref="paper",
+                            text=f"<b>{row['CodeA']}</b>", showarrow=False,
+                            xanchor="right", font=dict(size=16)
+                        ),
+                        dict(
+                            x=1.02, y=0.5, xref="paper", yref="paper",
+                            text=f"<b>{row['CodeB']}</b>", showarrow=False,
+                            xanchor="left", font=dict(size=16)
+                        ),
+                        dict(
+                            x=0.5, y=1.1, xref="paper", yref="paper",
+                            text=f"{row['Date']}", showarrow=False,
+                            font=dict(size=12, color="gray")
+                        )
+                    ]
                 )
                 
-                # 試合日とグラフを表示
-                col1, col2 = st.columns([1, 4])
-                with col1:
-                    st.write(f"**{row['Date']}**")
-                with col2:
-                    st.plotly_chart(fig_match, use_container_width=True, key=f"match_{idx}")
+                st.plotly_chart(fig, use_container_width=True, key=f"h2h_{idx}")
+
+# アプリのメイン処理の中で呼び出し
+if df is not None:
+    # (既存のテーブルやグラフ表示)
+    show_h2h_visuals()
