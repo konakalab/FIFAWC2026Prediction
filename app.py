@@ -14,8 +14,11 @@ df = load_data()
 
 if df is not None:
     st.set_page_config(page_title="FIFA Predictions", layout="wide")
-    st.title("⚽ FIFA グループステージ順位予測")
+    st.title("⚽ FIFAワールドカップ2026予測")
 
+    st.divider()
+    st.subheader(f"グループステージ順位予測")
+    
     # グループ名のリストを取得
     groups = sorted(df['Group'].unique())
 
