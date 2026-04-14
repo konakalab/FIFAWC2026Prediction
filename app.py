@@ -186,11 +186,11 @@ def show_h2h_visuals():
                 # --- Plotly 帯グラフの作成 ---
                 fig = go.Figure()
 
-                # Team A 勝率 (緑)
+                # Team A 勝率 (青)
                 fig.add_trace(go.Bar(
                     x=[row['pWin']], y=["Match"],
                     orientation='h',
-                    marker=dict(color='#2E7D32'),
+                    marker=dict(color='#2222EE'),
                     text=f"{row['pWin']:.1%}", textposition='inside',
                     name=f"{row['CodeA']} 勝"
                 ))
