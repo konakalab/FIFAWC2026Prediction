@@ -41,18 +41,17 @@ if df is not None:
     st.subheader("予測データ一覧")
     st.write("※列名をクリックするとソートできます。")
 
-    # 指定された列のみを表示し、ソート可能なテーブルとして描画
+    # 1. 表示する変数をユーザー提示のリストに完全一致させる
     display_columns = [
         'Team', 'Code', 'Group', 'isHome', 
         'Rating', 
         'StInGS_1', 'StInGS_2', 'StInGS_3', 'StInGS_4'
     ]
 
-    # 描画用の一次変数として抽出
+    # 2. 描画用の一次変数として抽出
     df_display = df[display_columns].copy()
 
-    # --- Rating列に色付け（スタイリング）を適用 ---
-    # low=0, high=0.5 は色の強弱を調整するパラメータです
+    # 3. スタイリング（formatのキーをdisplay_columnsにあるものだけに修正）
     styled_df = df_display.style.background_gradient(
         cmap='RdYlGn', 
         subset=['Rating'],
@@ -60,31 +59,28 @@ if df is not None:
         high=0.2
     ).format({
         'Rating': '{:.2f}',
-        'RatingOnScore': '{:.2f}',
         'StInGS_1': '{:.3f}',
         'StInGS_2': '{:.3f}',
         'StInGS_3': '{:.3f}',
         'StInGS_4': '{:.3f}'
     })
         
-    # 数値列の表示形式を整える (小数点以下3桁など)
+    # 4. ソート可能なテーブルとして描画
     st.dataframe(
         styled_df,
         use_container_width=True,
         column_config={
-            "Team": st.column_config.TextColumn("チーム名"),
-            "Code": st.column_config.TextColumn("コード"),
-            "Group": st.column_config.TextColumn("グループ"),
-            "isHome": st.column_config.NumberColumn("開催国"),
-            
-            "Rating": st.column_config.NumberColumn("評価値",format="%.2f"),
-            "RatingOnScore": st.column_config.NumberColumn(format="%.2f"),
-            "StInGS_1": st.column_config.NumberColumn("1位確率", format="%.3f"),
-            "StInGS_2": st.column_config.NumberColumn("2位確率", format="%.3f"),
-            "StInGS_3": st.column_config.NumberColumn("3位確率", format="%.3f"),
-            "StInGS_4": st.column_config.NumberColumn("4位確率", format="%.3f"),
+            "Team": "チーム名",
+            "Code": "コード",
+            "Group": "グループ",
+            "isHome": "開催国",
+            "Rating": "評価値",
+            "StInGS_1": "1位確率",
+            "StInGS_2": "2位確率",
+            "StInGS_3": "3位確率",
+            "StInGS_4": "4位確率",
         },
-        hide_index=True # インデックス列を非表示にする
+        hide_index=True
     )
     
     st.divider()
