@@ -24,6 +24,7 @@ if df is not None:
     st.set_page_config(page_title="FIFA Predictions", layout="wide")
     st.title("⚽ FIFAワールドカップ2026予測")
 
+    # 学習期間の表示
     if df_train is not None:
          df_train['date'] = pd.to_datetime(df_train['date'])
          start_date = df_train['date'].min().strftime('%Y-%m-%d')
@@ -36,7 +37,32 @@ if df is not None:
     )
     
     st.info(info_text)
+    st.divider()
+    st.subheader("予測データ一覧")
+    st.write("※列名をクリックするとソートできます。")
 
+    # 指定された列のみを表示し、ソート可能なテーブルとして描画
+    display_columns = [
+        'Team', 'Group', 'isHome', 'Serial', 'Code', 
+        'Rating', 'RatingOnScore', 
+        'StInGS_1', 'StInGS_2', 'StInGS_3', 'StInGS_4'
+    ]
+
+    # 数値列の表示形式を整える (小数点以下3桁など)
+    st.dataframe(
+        df[display_columns],
+        use_container_width=True,
+        column_config={
+            "Rating": st.column_config.NumberColumn(format="%.2f"),
+            "RatingOnScore": st.column_config.NumberColumn(format="%.2f"),
+            "StInGS_1": st.column_config.NumberColumn("1位確率", format="%.3f"),
+            "StInGS_2": st.column_config.NumberColumn("2位確率", format="%.3f"),
+            "StInGS_3": st.column_config.NumberColumn("3位確率", format="%.3f"),
+            "StInGS_4": st.column_config.NumberColumn("4位確率", format="%.3f"),
+        },
+        hide_index=True # インデックス列を非表示にする
+    )
+    
     st.divider()
     st.subheader(f"グループステージ順位予測")
     
