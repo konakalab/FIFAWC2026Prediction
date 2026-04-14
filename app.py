@@ -193,7 +193,7 @@ if df is not None:
                     fig_h2h.update_layout(
                         barmode='stack',
                         height=100,
-                        margin=dict(l=70, r=70, t=00, b=10),
+                        margin=dict(l=70, r=70, t=00, b=0),
                         showlegend=False,
                         xaxis=dict(showticklabels=False, range=[0, 1], fixedrange=True),
                         yaxis=dict(showticklabels=False, fixedrange=True),
