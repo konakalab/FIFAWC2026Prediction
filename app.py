@@ -162,6 +162,8 @@ if df is not None:
                         marker=dict(color='#2222EE'),
                         text=f"{row['CodeA']} {row['pWin']:.1%}",
                         textposition='inside',
+                        insidetextanchor='middle',
+                        textfont=dict(size=20),
                         hoverinfo="skip",
                         name=f"{row['CodeA']} 勝"
                     ))
@@ -171,6 +173,8 @@ if df is not None:
                         marker=dict(color='#BDBDBD'),
                         text=f"Draw {row['pDraw']:.1%}",
                         textposition='inside',
+                        insidetextanchor='middle',
+                        textfont=dict(size=20),
                         hoverinfo="skip",
                         name="引分"
                     ))
@@ -180,6 +184,8 @@ if df is not None:
                         marker=dict(color='#C62828'),
                         text=f"{row['CodeB']} {row['pLose']:.1%}",
                         textposition='inside',
+                        insidetextanchor='middle',
+                        textfont=dict(size=20),
                         hoverinfo="skip",
                         name=f"{row['CodeB']} 勝"
                     ))
