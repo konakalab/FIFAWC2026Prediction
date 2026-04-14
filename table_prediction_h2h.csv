@@ -1,73 +1,73 @@
 Date,TeamA,TeamB,Group,GoalsA,GoalsB,matchURL,CodeA,CodeB,pWin,pDraw,pLose
-2026/06/11,Mexico,South Africa,A,NaN,NaN,https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/match-center/1,MEX,RSA,0.461046929260487,0.324350115282504,0.214602955457009
-2026/06/11,South Korea,Czech Republic,A,NaN,NaN,https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/match-center/2,KOR,CZE,0.347786193326502,0.34745621865456,0.304757588018938
-2026/06/12,Australia,Turkey,D,NaN,NaN,https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/match-center/3,AUS,TUR,0.319515869738567,0.348124240100884,0.332359890160549
-2026/06/12,Qatar,Switzerland,B,NaN,NaN,https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/match-center/4,QAT,SUI,0.176958042565001,0.302162585745017,0.520879371689982
-2026/06/12,Canada,Bosnia and Herzegovina,B,NaN,NaN,https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/match-center/5,CAN,BIH,0.452159835254271,0.327138244218804,0.220701920526925
-2026/06/12,United States,Paraguay,D,NaN,NaN,https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/match-center/6,USA,PAR,0.32600942452688,0.348189586231774,0.325800989241345
-2026/06/13,Brazil,Morocco,C,NaN,NaN,https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/match-center/7,BRA,MAR,0.352271781191241,0.347131978589634,0.300596240219125
-2026/06/13,Haiti,Scotland,C,NaN,NaN,https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/match-center/8,HAI,SCO,0.236815674148806,0.333542085712962,0.429642240138232
-2026/06/14,Sweden,Tunisia,F,NaN,NaN,https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/match-center/9,SWE,TUN,0.332459460904252,0.34812221846965,0.319418320626098
-2026/06/14,Netherlands,Japan,F,NaN,NaN,https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/match-center/10,NED,JPN,0.339031314241652,0.347922097285274,0.313046588473073
-2026/06/14,Ivory Coast,Ecuador,E,NaN,NaN,https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/match-center/11,CIV,ECU,0.260088834754926,0.340524554892692,0.399386610352382
-2026/06/14,Germany,Curaçao,E,NaN,NaN,https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/match-center/12,GER,CUW,0.579288175178837,0.275589379131989,0.145122445689174
-2026/06/15,Saudi Arabia,Uruguay,H,NaN,NaN,https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/match-center/13,KSA,URU,0.212582837156722,0.323380451612804,0.464036711230474
-2026/06/15,Iran,New Zealand,G,NaN,NaN,https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/match-center/14,IRN,NZL,0.40512842854654,0.339351899615498,0.255519671837962
-2026/06/15,Spain,Cape Verde,H,NaN,NaN,https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/match-center/15,ESP,CPV,0.55764873717343,0.285936986750389,0.15641427607618
-2026/06/15,Belgium,Egypt,G,NaN,NaN,https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/match-center/16,BEL,EGY,0.370858177693743,0.345199878868896,0.283941943437362
-2026/06/16,France,Senegal,I,NaN,NaN,https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/match-center/17,FRA,SEN,0.382638623952575,0.343509148570996,0.27385222747643
-2026/06/16,Iraq,Norway,I,NaN,NaN,https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/match-center/18,IRQ,NOR,0.211011461919268,0.322610000915763,0.466378537164969
-2026/06/16,Austria,Jordan,J,NaN,NaN,https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/match-center/19,AUT,JOR,0.425708403331093,0.334558941906852,0.239732654762055
-2026/06/16,Argentina,Algeria,J,NaN,NaN,https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/match-center/20,ARG,ALG,0.457712193544392,0.32541297372183,0.216874832733778
-2026/06/17,Portugal,DR Congo,K,NaN,NaN,https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/match-center/21,POR,COD,0.4204467876474,0.335869564155936,0.243683648196664
-2026/06/17,Uzbekistan,Colombia,K,NaN,NaN,https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/match-center/22,UZB,COL,0.22145537228932,0.327468394070511,0.45107623364017
-2026/06/17,England,Croatia,L,NaN,NaN,https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/match-center/23,ENG,CRO,0.369894997528751,0.345322538705754,0.284782463765495
-2026/06/17,Ghana,Panama,L,NaN,NaN,https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/match-center/24,GHA,PAN,0.306385060355165,0.347566417647395,0.34604852199744
-2026/06/18,Switzerland,Bosnia and Herzegovina,B,NaN,NaN,https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/match-center/25,SUI,BIH,0.466573290856245,0.322545498194246,0.210881210949509
-2026/06/18,Mexico,South Korea,A,NaN,NaN,https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/match-center/26,MEX,KOR,0.392077925245324,0.341908333678863,0.266013741075813
-2026/06/18,Czech Republic,South Africa,A,NaN,NaN,https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/match-center/27,CZE,RSA,0.367655850008725,0.345598389676019,0.286745760315256
-2026/06/18,Canada,Qatar,B,NaN,NaN,https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/match-center/28,CAN,QAT,0.50638085662814,0.308048680879263,0.185570462492598
-2026/06/19,United States,Australia,D,NaN,NaN,https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/match-center/29,USA,AUS,0.333786249073788,0.348092377823215,0.318121373102997
-2026/06/19,Brazil,Haiti,C,NaN,NaN,https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/match-center/30,BRA,HAI,0.530043201930082,0.298288019374372,0.171668778695546
-2026/06/19,Turkey,Paraguay,D,NaN,NaN,https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/match-center/31,TUR,PAR,0.324600106190663,0.34818689833493,0.327212995474407
-2026/06/19,Scotland,Morocco,C,NaN,NaN,https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/match-center/32,SCO,MAR,0.266452393988616,0.342004757235208,0.391542848776176
-2026/06/20,Ecuador,Curaçao,E,NaN,NaN,https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/match-center/33,ECU,CUW,0.570644808069896,0.279789425204521,0.149565766725583
-2026/06/20,Germany,Ivory Coast,E,NaN,NaN,https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/match-center/34,GER,CIV,0.407900355992881,0.338759446063589,0.25334019794353
-2026/06/20,Netherlands,Sweden,F,NaN,NaN,https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/match-center/35,NED,SWE,0.448988677853736,0.328098322434387,0.222912999711876
-2026/06/20,Tunisia,Japan,F,NaN,NaN,https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/match-center/36,TUN,JPN,0.228059211639388,0.330231011574,0.441709776786612
-2026/06/21,Belgium,Iran,G,NaN,NaN,https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/match-center/37,BEL,IRN,0.352574472563398,0.347108053941745,0.300317473494856
-2026/06/21,New Zealand,Egypt,G,NaN,NaN,https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/match-center/38,NZL,EGY,0.270876108678162,0.342931608773577,0.386192282548262
-2026/06/21,Spain,Saudi Arabia,H,NaN,NaN,https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/match-center/39,ESP,KSA,0.576466491474158,0.276970091350028,0.146563417175814
-2026/06/21,Uruguay,Cape Verde,H,NaN,NaN,https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/match-center/40,URU,CPV,0.445032658752373,0.329269810807957,0.22569753043967
-2026/06/22,Norway,Senegal,I,NaN,NaN,https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/match-center/41,NOR,SEN,0.333970562555105,0.348087806400771,0.317941631044124
-2026/06/22,France,Iraq,I,NaN,NaN,https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/match-center/42,FRA,IRQ,0.519297501839559,0.302819515535792,0.177882982624648
-2026/06/22,Argentina,Austria,J,NaN,NaN,https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/match-center/43,ARG,AUT,0.424872200335776,0.33477103968407,0.240356759980154
-2026/06/22,Jordan,Algeria,J,NaN,NaN,https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/match-center/44,JOR,ALG,0.264852478942772,0.341649091311733,0.393498429745496
-2026/06/23,Colombia,DR Congo,K,NaN,NaN,https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/match-center/45,COL,COD,0.445578359730434,0.329109958519368,0.225311681750198
-2026/06/23,Panama,Croatia,L,NaN,NaN,https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/match-center/46,PAN,CRO,0.230993063549111,0.331384305253583,0.437622631197307
-2026/06/23,England,Ghana,L,NaN,NaN,https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/match-center/47,ENG,GHA,0.508396923559534,0.307248576872089,0.184354499568377
-2026/06/23,Portugal,Uzbekistan,K,NaN,NaN,https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/match-center/48,POR,UZB,0.425872763284779,0.334517085083934,0.239610151631286
-2026/06/24,Switzerland,Canada,B,NaN,NaN,https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/match-center/49,SUI,CAN,0.338782852819407,0.34793202920858,0.313285117972013
-2026/06/24,Scotland,Brazil,C,NaN,NaN,https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/match-center/50,SCO,BRA,0.244088597106843,0.33599961592426,0.419911786968897
-2026/06/24,Bosnia and Herzegovina,Qatar,B,NaN,NaN,https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/match-center/51,BIH,QAT,0.375359613015043,0.344595077693415,0.280045309291542
-2026/06/24,Morocco,Haiti,C,NaN,NaN,https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/match-center/52,MAR,HAI,0.500655433196545,0.3102877145128,0.189056852290655
-2026/06/24,South Africa,South Korea,A,NaN,NaN,https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/match-center/53,RSA,KOR,0.267132201704653,0.342152569871106,0.390715228424241
-2026/06/24,Czech Republic,Mexico,A,NaN,NaN,https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/match-center/54,CZE,MEX,0.247326532603664,0.337011286244894,0.415662181151442
-2026/06/25,Japan,Sweden,F,NaN,NaN,https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/match-center/55,JPN,SWE,0.434403299401794,0.332269888813969,0.233326811784238
-2026/06/25,Tunisia,Netherlands,F,NaN,NaN,https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/match-center/56,TUN,NED,0.2178137091267,0.325843748141219,0.45634254273208
-2026/06/25,Turkey,United States,D,NaN,NaN,https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/match-center/57,TUR,USA,0.324496113578303,0.348186449540186,0.32731743688151
-2026/06/25,Paraguay,Australia,D,NaN,NaN,https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/match-center/58,PAR,AUS,0.333680767459273,0.348094947352973,0.318224285187754
-2026/06/25,Ecuador,Germany,E,NaN,NaN,https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/match-center/59,ECU,GER,0.31818318449663,0.348093925320707,0.333722890182664
-2026/06/25,Curaçao,Ivory Coast,E,NaN,NaN,https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/match-center/60,CUW,CIV,0.194776331230173,0.313787889332946,0.491435779436881
-2026/06/26,Senegal,Iraq,I,NaN,NaN,https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/match-center/61,SEN,IRQ,0.457311105072646,0.325539470987118,0.217149423940236
-2026/06/26,Norway,France,I,NaN,NaN,https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/match-center/62,NOR,FRA,0.281166712130737,0.344775264853954,0.374058023015309
-2026/06/26,Egypt,Iran,G,NaN,NaN,https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/match-center/63,EGY,IRN,0.308750112632185,0.347710134006445,0.343539753361369
-2026/06/26,Uruguay,Spain,H,NaN,NaN,https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/match-center/64,URU,ESP,0.235204919046518,0.332962373010757,0.431832707942725
-2026/06/26,Cape Verde,Saudi Arabia,H,NaN,NaN,https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/match-center/65,CPV,KSA,0.342965961349105,0.347740430900926,0.309293607749969
-2026/06/26,New Zealand,Belgium,G,NaN,NaN,https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/match-center/66,NZL,BEL,0.233543543479427,0.332350715844678,0.434105740675895
-2026/06/27,Panama,England,L,NaN,NaN,https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/match-center/67,PAN,ENG,0.198322927268738,0.315853075984996,0.485823996746267
-2026/06/27,Colombia,Portugal,K,NaN,NaN,https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/match-center/68,COL,POR,0.348786622109539,0.347388849968289,0.303824527922171
-2026/06/27,DR Congo,Uzbekistan,K,NaN,NaN,https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/match-center/69,COD,UZB,0.330807510820726,0.348151807586354,0.32104068159292
-2026/06/27,Algeria,Austria,J,NaN,NaN,https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/match-center/70,ALG,AUT,0.29733688084263,0.346834738599372,0.355828380557998
-2026/06/27,Jordan,Argentina,J,NaN,NaN,https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/match-center/71,JOR,ARG,0.171063866044725,0.297831925738389,0.531104208216886
-2026/06/27,Croatia,Ghana,L,NaN,NaN,https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/match-center/72,CRO,GHA,0.459959407606577,0.3246989103353,0.215341682058123
+2026/06/11,Mexico,South Africa,A,NaN,NaN,NaN,MEX,RSA,0.718720401554098,0.197468080344776,0.0838115181011256
+2026/06/11,South Korea,Czech Republic,A,NaN,NaN,NaN,KOR,CZE,0.391526901326837,0.342007620706449,0.266465477966714
+2026/06/12,Australia,Turkey,D,NaN,NaN,NaN,AUS,TUR,0.307452661570406,0.347633691132181,0.344913647297413
+2026/06/12,Qatar,Switzerland,B,NaN,NaN,NaN,QAT,SUI,0.0434806279675238,0.119330744960939,0.837188627071537
+2026/06/12,Canada,Bosnia and Herzegovina,B,NaN,NaN,NaN,CAN,BIH,0.697119208143319,0.210687621935733,0.0921931699209479
+2026/06/12,United States,Paraguay,D,NaN,NaN,NaN,USA,PAR,0.326209337120015,0.348189456912072,0.325601205967913
+2026/06/13,Brazil,Morocco,C,NaN,NaN,NaN,BRA,MAR,0.405313362644557,0.339312902562632,0.255373734792811
+2026/06/13,Haiti,Scotland,C,NaN,NaN,NaN,HAI,SCO,0.117058579378132,0.244857851676218,0.63808356894565
+2026/06/14,Sweden,Tunisia,F,NaN,NaN,NaN,SWE,TUN,0.345209497016605,0.347616512758718,0.307173990224676
+2026/06/14,Netherlands,Japan,F,NaN,NaN,NaN,NED,JPN,0.364893449805392,0.345920620091303,0.289185930103305
+2026/06/14,Ivory Coast,Ecuador,E,NaN,NaN,NaN,CIV,ECU,0.160201650693296,0.289172420028417,0.550625929278287
+2026/06/14,Germany,Curaçao,E,NaN,NaN,NaN,GER,CUW,0.911076082684132,0.0666186297880587,0.0223052875278096
+2026/06/15,Saudi Arabia,Uruguay,H,NaN,NaN,NaN,KSA,URU,0.0811561825096802,0.193084514944036,0.725759302546284
+2026/06/15,Iran,New Zealand,G,NaN,NaN,NaN,IRN,NZL,0.567798030022523,0.281153486828351,0.151048483149126
+2026/06/15,Spain,Cape Verde,H,NaN,NaN,NaN,ESP,CPV,0.88789663993878,0.0834374670864642,0.028665892974756
+2026/06/15,Belgium,Egypt,G,NaN,NaN,NaN,BEL,EGY,0.462963948510262,0.32373018558249,0.213305865907248
+2026/06/16,France,Senegal,I,NaN,NaN,NaN,FRA,SEN,0.499492519879143,0.310736430526833,0.189771049594024
+2026/06/16,Iraq,Norway,I,NaN,NaN,NaN,IRQ,NOR,0.0791316782313229,0.189676985000264,0.731191336768414
+2026/06/16,Austria,Jordan,J,NaN,NaN,NaN,AUT,JOR,0.627186363861603,0.250820915463048,0.121992720675349
+2026/06/16,Argentina,Algeria,J,NaN,NaN,NaN,ARG,ALG,0.710733017667925,0.202397752651315,0.0868692296807599
+2026/06/17,Portugal,DR Congo,K,NaN,NaN,NaN,POR,COD,0.612366494207007,0.258742398364484,0.128891107428509
+2026/06/17,Uzbekistan,Colombia,K,NaN,NaN,NaN,UZB,COL,0.0932671457186744,0.21231579027298,0.694417064008346
+2026/06/17,England,Croatia,L,NaN,NaN,NaN,ENG,CRO,0.459969195947589,0.324695780339489,0.215335023712921
+2026/06/17,Ghana,Panama,L,NaN,NaN,NaN,GHA,PAN,0.270862098327049,0.342928803094096,0.386209098578856
+2026/06/18,Switzerland,Bosnia and Herzegovina,B,NaN,NaN,NaN,SUI,BIH,0.731639848111058,0.189394684407365,0.0789654674815769
+2026/06/18,Mexico,South Korea,A,NaN,NaN,NaN,MEX,KOR,0.528475365776877,0.29895916424295,0.172565469980172
+2026/06/18,Czech Republic,South Africa,A,NaN,NaN,NaN,CZE,RSA,0.453006217275016,0.326878871693994,0.22011491103099
+2026/06/18,Canada,Qatar,B,NaN,NaN,NaN,CAN,QAT,0.812770823062977,0.136135251575862,0.0510939253611604
+2026/06/19,United States,Australia,D,NaN,NaN,NaN,USA,AUS,0.349158840255908,0.347363056475864,0.303478103268228
+2026/06/19,Brazil,Haiti,C,NaN,NaN,NaN,BRA,HAI,0.851281020667542,0.109485925190214,0.0392330541422435
+2026/06/19,Turkey,Paraguay,D,NaN,NaN,NaN,TUR,PAR,0.322105079545273,0.34816657728919,0.329728343165537
+2026/06/19,Scotland,Morocco,C,NaN,NaN,NaN,SCO,MAR,0.173502914567961,0.299654529521428,0.526842555910611
+2026/06/20,Ecuador,Curaçao,E,NaN,NaN,NaN,ECU,CUW,0.902353368561189,0.0729764278694862,0.0246702035693253
+2026/06/20,Germany,Ivory Coast,E,NaN,NaN,NaN,GER,CIV,0.576004894523147,0.277195082494175,0.146800022982678
+2026/06/20,Netherlands,Sweden,F,NaN,NaN,NaN,NED,SWE,0.68917026837632,0.215460557479976,0.0953691741437036
+2026/06/20,Tunisia,Japan,F,NaN,NaN,NaN,TUN,JPN,0.103049146505523,0.226490786309435,0.670460067185042
+2026/06/21,Belgium,Iran,G,NaN,NaN,NaN,BEL,IRN,0.40624641947403,0.339114991570454,0.254638588955516
+2026/06/21,New Zealand,Egypt,G,NaN,NaN,NaN,NZL,EGY,0.183125645685347,0.306429786908597,0.510444567406057
+2026/06/21,Spain,Saudi Arabia,H,NaN,NaN,NaN,ESP,KSA,0.908303655727967,0.0686430781390028,0.0230532661330301
+2026/06/21,Uruguay,Cape Verde,H,NaN,NaN,NaN,URU,CPV,0.679080648409244,0.221444971068344,0.0994743805224126
+2026/06/22,Norway,Senegal,I,NaN,NaN,NaN,NOR,SEN,0.349708504619517,0.347324246258189,0.302967249122295
+2026/06/22,France,Iraq,I,NaN,NaN,NaN,FRA,IRQ,0.834652502219177,0.121091306080007,0.0442561917008165
+2026/06/22,Argentina,Austria,J,NaN,NaN,NaN,ARG,AUT,0.624849462600047,0.252084633077037,0.123065904322917
+2026/06/22,Jordan,Algeria,J,NaN,NaN,NaN,JOR,ALG,0.170098391067717,0.297098377480315,0.532803231451968
+2026/06/23,Colombia,DR Congo,K,NaN,NaN,NaN,COL,COD,0.680483732333849,0.220617797602711,0.098898470063441
+2026/06/23,Panama,Croatia,L,NaN,NaN,NaN,PAN,CRO,0.107609842854528,0.232711424427375,0.659678732718097
+2026/06/23,England,Ghana,L,NaN,NaN,NaN,ENG,GHA,0.816325688841684,0.133709388875732,0.0499649222825848
+2026/06/23,Portugal,Uzbekistan,K,NaN,NaN,NaN,POR,UZB,0.627644859947912,0.250572345132615,0.121782794919473
+2026/06/24,Switzerland,Canada,B,NaN,NaN,NaN,SUI,CAN,0.364143962371738,0.34600457236406,0.289851465264201
+2026/06/24,Scotland,Brazil,C,NaN,NaN,NaN,SCO,BRA,0.129612181399445,0.2595432593018,0.610844559298755
+2026/06/24,Bosnia and Herzegovina,Qatar,B,NaN,NaN,NaN,BIH,QAT,0.47694995539727,0.319014914036197,0.204035130566534
+2026/06/24,Morocco,Haiti,C,NaN,NaN,NaN,MAR,HAI,0.802389099217448,0.143178311613326,0.0544325891692258
+2026/06/24,South Africa,South Korea,A,NaN,NaN,NaN,RSA,KOR,0.174961717038366,0.3007239364001,0.524314346561534
+2026/06/24,Czech Republic,Mexico,A,NaN,NaN,NaN,CZE,MEX,0.135471963239446,0.265866663876753,0.598661372883802
+2026/06/25,Japan,Sweden,F,NaN,NaN,NaN,JPN,SWE,0.651051921472125,0.237614862836819,0.111333215691056
+2026/06/25,Tunisia,Netherlands,F,NaN,NaN,NaN,TUN,NED,0.0881551215925276,0.204433773852352,0.70741110455512
+2026/06/25,Turkey,United States,D,NaN,NaN,NaN,TUR,USA,0.321802939701568,0.348162757267897,0.330034303030535
+2026/06/25,Paraguay,Australia,D,NaN,NaN,NaN,PAR,AUS,0.348844382466185,0.347384873217907,0.303770744315908
+2026/06/25,Ecuador,Germany,E,NaN,NaN,NaN,ECU,GER,0.303653857269747,0.347376195413638,0.348969947316614
+2026/06/25,Curaçao,Ivory Coast,E,NaN,NaN,NaN,CUW,CIV,0.0602441157421723,0.154985319669945,0.784770564587883
+2026/06/26,Senegal,Iraq,I,NaN,NaN,NaN,SEN,IRQ,0.709762708903824,0.202993331299539,0.087243959796637
+2026/06/26,Norway,France,I,NaN,NaN,NaN,NOR,FRA,0.206679986141652,0.320411801511499,0.472908212346849
+2026/06/26,Egypt,Iran,G,NaN,NaN,NaN,EGY,IRN,0.277308337114971,0.344134253191227,0.378557409693802
+2026/06/26,Uruguay,Spain,H,NaN,NaN,NaN,URU,ESP,0.11439149926523,0.241527855346276,0.644080645388493
+2026/06/26,Cape Verde,Saudi Arabia,H,NaN,NaN,NaN,CPV,KSA,0.37681195916439,0.344388966639373,0.278799074196237
+2026/06/26,New Zealand,Belgium,G,NaN,NaN,NaN,NZL,BEL,0.111683316770508,0.238067994076691,0.650248689152802
+2026/06/27,Panama,England,L,NaN,NaN,NaN,PAN,ENG,0.06406253950402,0.162441015775559,0.773496444720421
+2026/06/27,Colombia,Portugal,K,NaN,NaN,NaN,COL,POR,0.394594668249304,0.341445803846979,0.263959527903718
+2026/06/27,DR Congo,Uzbekistan,K,NaN,NaN,NaN,COD,UZB,0.340311039793914,0.34786803270065,0.311820927505436
+2026/06/27,Algeria,Austria,J,NaN,NaN,NaN,ALG,AUT,0.246841806431166,0.336863010629784,0.41629518293905
+2026/06/27,Jordan,Argentina,J,NaN,NaN,NaN,JOR,ARG,0.0387672368323271,0.108385089532729,0.852847673634944
+2026/06/27,Croatia,Ghana,L,NaN,NaN,NaN,CRO,GHA,0.716131296001863,0.199071270144593,0.0847974338535438
