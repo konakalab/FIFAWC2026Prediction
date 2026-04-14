@@ -156,7 +156,6 @@ if df is not None:
         
         # グラフの表示
         st.plotly_chart(fig, use_container_width=True)
-        st.divider()
 
 # 1. 試合データの読み込み
 def load_h2h_data():
