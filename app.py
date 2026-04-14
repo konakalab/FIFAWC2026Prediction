@@ -81,10 +81,10 @@ if df is not None:
             "Group": "グループ",
             "isHome": "開催国",
             "Rating": "評価値",
-            "StInGS_1": "1位確率",
-            "StInGS_2": "2位確率",
-            "StInGS_3": "3位確率",
-            "StInGS_4": "4位確率",
+            "StInGS_1": "GS1位確率",
+            "StInGS_2": "GS2位確率",
+            "StInGS_3": "GS3位確率",
+            "StInGS_4": "GS4位確率",
         },
         hide_index=True
     )
