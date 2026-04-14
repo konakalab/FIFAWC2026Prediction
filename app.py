@@ -156,33 +156,33 @@ if df is not None:
                     st.write(f"**{row['Date']} {row['TeamA']} vs {row['TeamB']}**")
                     
                     fig_h2h = go.Figure()
-                fig_h2h.add_trace(go.Bar(
-                    x=[row['pWin']], y=["Match"],
-                    orientation='h',
-                    marker=dict(color='#2222EE'),
-                    text=f"{row['CodeA']} {row['pWin']:.1%}",
-                    textposition='inside',
-                    hoverinfo="skip",
-                    name=f"{row['CodeA']} 勝"
-                ))
-                fig_h2h.add_trace(go.Bar(
-                    x=[row['pDraw']], y=["Match"],
-                    orientation='h',
-                    marker=dict(color='#BDBDBD'),
-                    text=f"引分 {row['pDraw']:.1%}",
-                    textposition='inside',
-                    hoverinfo="skip",
-                    name="引分"
-                ))
-                fig_h2h.add_trace(go.Bar(
-                    x=[row['pLose']], y=["Match"],
-                    orientation='h',
-                    marker=dict(color='#C62828'),
-                    text=f"{row['CodeB']} {row['pLose']:.1%}",
-                    textposition='inside',
-                    hoverinfo="skip",
-                    name=f"{row['CodeB']} 勝"
-                ))
+                    fig_h2h.add_trace(go.Bar(
+                        x=[row['pWin']], y=["Match"],
+                        orientation='h',
+                        marker=dict(color='#2222EE'),
+                        text=f"{row['CodeA']} {row['pWin']:.1%}",
+                        textposition='inside',
+                        hoverinfo="skip",
+                        name=f"{row['CodeA']} 勝"
+                    ))
+                    fig_h2h.add_trace(go.Bar(
+                        x=[row['pDraw']], y=["Match"],
+                        orientation='h',
+                        marker=dict(color='#BDBDBD'),
+                        text=f"引分 {row['pDraw']:.1%}",
+                        textposition='inside',
+                        hoverinfo="skip",
+                        name="引分"
+                    ))
+                    fig_h2h.add_trace(go.Bar(
+                        x=[row['pLose']], y=["Match"],
+                        orientation='h',
+                        marker=dict(color='#C62828'),
+                        text=f"{row['CodeB']} {row['pLose']:.1%}",
+                        textposition='inside',
+                        hoverinfo="skip",
+                        name=f"{row['CodeB']} 勝"
+                    ))
 
                     fig_h2h.update_layout(
                         barmode='stack',
