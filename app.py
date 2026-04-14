@@ -28,9 +28,14 @@ if df is not None:
          df_train['date'] = pd.to_datetime(df_train['date'])
          start_date = df_train['date'].min().strftime('%Y-%m-%d')
          end_date = df_train['date'].max().strftime('%Y-%m-%d')
-         st.info(f"""モデル学習期間: {start_date} ～ {end_date} 
-         \n\n
-         データは[International football results from 1872 to 2026](https://www.kaggle.com/datasets/martj42/international-football-results-from-1872-to-2017)を利用しています．""")
+         info_text = (
+        f"**モデル学習期間:** {start_date} ～ {end_date}\n\n"
+        f"データは [International football results from 1872 to 2026]"
+        f"(https://www.kaggle.com/datasets/martj42/international-football-results-from-1872-to-2017) "
+        f"を利用しています。 (※最新の試合結果を反映済み)"
+    )
+    
+    st.info(info_text)
 
     st.divider()
     st.subheader(f"グループステージ順位予測")
