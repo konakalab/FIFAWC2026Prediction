@@ -57,6 +57,11 @@ if df is not None:
         subset=['Rating'],
         low=0.2, 
         high=0.2
+    ).background_gradient(
+        cmap='Blues',      # 確率は青系のスケールなど、色を変えると見やすいです
+        subset=['StInGS_1', 'StInGS_2', 'StInGS_3', 'StInGS_4'],
+        vmin=0.0,          # 最小値を0に固定
+        vmax=1.0           # 最大値を1に固定
     ).format({
         'Rating': '{:.2f}',
         'StInGS_1': '{:.3f}',
