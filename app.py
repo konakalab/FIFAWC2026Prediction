@@ -58,15 +58,22 @@ if df is not None:
         )
 
         fig.update_layout(
+            # 全体の基本フォントサイズ
+            font=dict(size=18), 
             xaxis_title=None,
             yaxis_title=None,
-            # 文字サイズをさらに大きく設定
-            font=dict(size=18), 
             margin=dict(l=10, r=10, t=10, b=10),
             legend_title=None,
             barmode='stack',
-            # Y軸（3文字コード）の順序を逆転させ、上が1番目になるように設定
-            yaxis=dict(autorange="reversed") 
+            
+            # --- 軸のフォントサイズを個別に設定 ---
+            xaxis=dict(
+                tickfont=dict(size=20),  # 横軸（0.0〜1.0）の数値サイズ
+            ),
+            yaxis=dict(
+                autorange="reversed",
+                tickfont=dict(size=22),  # 縦軸（国名コード）のサイズをさらに大きく
+            )
         )
         
         # グラフの表示
