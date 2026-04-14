@@ -40,6 +40,7 @@ if df is not None:
     st.info(info_text)
     st.divider()
     st.subheader("予測データ一覧")
+    st.subheader("グループステージ")
     st.write("※列名をクリックするとソートできます。")
 
     # 1. 表示する変数をユーザー提示のリストに完全一致させる
