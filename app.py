@@ -12,6 +12,14 @@ def load_data():
 
 df = load_data()
 
+def load_train_data():
+     file_train = 'table_FIFAWC2026Pred_Train.csv'
+     if os.path.exists(file_train):
+         return pd.read_csv(file_train)
+     return None
+ 
+df_train = load_train_data()
+
 if df is not None:
     st.set_page_config(page_title="FIFA Predictions", layout="wide")
     st.title("⚽ FIFAワールドカップ2026予測")
