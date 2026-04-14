@@ -54,8 +54,9 @@ if df is not None:
         use_container_width=True,
         column_config={
             "Team": st.column_config.TextColumn("チーム名"),
+            "Code": st.column_config.TextColumn("コード"),
             "Group": st.column_config.TextColumn("グループ"),
-            "Home": st.column_config.NumberColumn("開催国"),
+            "isHome": st.column_config.NumberColumn("開催国"),
             
             "Rating": st.column_config.NumberColumn("評価値",format="%.2f"),
             "RatingOnScore": st.column_config.NumberColumn(format="%.2f"),
