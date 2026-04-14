@@ -169,7 +169,7 @@ if df is not None:
                         x=[row['pDraw']], y=["Match"],
                         orientation='h',
                         marker=dict(color='#BDBDBD'),
-                        text=f"引分 {row['pDraw']:.1%}",
+                        text=f"Draw {row['pDraw']:.1%}",
                         textposition='inside',
                         hoverinfo="skip",
                         name="引分"
