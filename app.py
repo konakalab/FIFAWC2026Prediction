@@ -32,7 +32,7 @@ if df is not None:
         f"**モデル学習期間:** {start_date} ～ {end_date}\n\n"
         f"データは [International football results from 1872 to 2026]"
         f"(https://www.kaggle.com/datasets/martj42/international-football-results-from-1872-to-2017) "
-        f"を利用しています。 (※最新の試合結果を反映済み)"
+        f"を利用しています。 "
     )
     
     st.info(info_text)
