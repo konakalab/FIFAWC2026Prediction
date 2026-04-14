@@ -44,7 +44,7 @@ if df is not None:
     # 指定された列のみを表示し、ソート可能なテーブルとして描画
     display_columns = [
         'Team', 'Group', 'isHome', 'Serial', 'Code', 
-        'Rating', 'RatingOnScore', 
+        'Rating', 
         'StInGS_1', 'StInGS_2', 'StInGS_3', 'StInGS_4'
     ]
 
