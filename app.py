@@ -43,6 +43,59 @@ if df is not None:
     
     # --- 1. 予測データ一覧 (最上部に配置) ---
     st.subheader("予測データ一覧")
+    st.subheader("大会予測")
+
+    file_overall = 'table_overallPrediction.csv'
+    if os.path.exists(file_overall):
+        df_overall = pd.read_csv(file_overall)
+        
+        # 表示する列の定義
+        overall_cols = [
+            'Team', 'Code', 'Group', 'isHome', 'Rating', 
+            'PredStanding_1', 'PredStanding_2', 'PredStanding_3', 'PredStanding_4', 
+            'PredStanding_5', 'PredStanding_6', 'PredStanding_7', 'PredStanding_8'
+        ]
+        
+        # 優勝確率順にソート
+        df_overall_display = df_overall[overall_cols].sort_values('PredStanding_1', ascending=False)
+
+        # スタイル適用
+        styled_overall = df_overall_display.style.background_gradient(
+            cmap='RdYlGn', subset=['Rating'], low=0.2, high=0.2
+        ).background_gradient(
+            cmap='Oranges', 
+            subset=[f'PredStanding_{i}' for i in range(1, 9)],
+            vmin=0.0, vmax=1.0
+        ).format({
+            'Rating': '{:.2f}',
+            **{f'PredStanding_{i}': '{:.3f}' for i in range(1, 9)}
+        })
+
+        st.dataframe(
+            styled_overall,
+            use_container_width=True,
+            column_config={
+                "Team": "チーム名",
+                "Code": "コード",
+                "Group": "グループ",
+                "isHome": "開催国",
+                "Rating": "評価値",
+                "PredStanding_1": "優勝",
+                "PredStanding_2": "準優勝",
+                "PredStanding_3": "3位",
+                "PredStanding_4": "4位",
+                "PredStanding_5": "ベスト8",
+                "PredStanding_6": "ベスト16",
+                "PredStanding_7": "ベスト32",
+                "PredStanding_8": "GS敗退",
+            },
+            hide_index=True
+        )
+    else:
+        st.write("大会予測データが見つかりません。")
+        
+    st.divider()
+
     st.subheader("グループステージ")
     st.write("※列名をクリックするとソートできます。")
 
