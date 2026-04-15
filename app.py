@@ -59,16 +59,19 @@ if df is not None:
         # 優勝確率順にソート
         df_overall_display = df_overall[overall_cols].sort_values('PredStanding_1', ascending=False)
 
-        # スタイル適用
+        # 確率列（PredStanding_1〜8）のリスト
+        prob_cols = [f'PredStanding_{i}' for i in range(1, 9)]
+
+        # スタイル適用：Ratingは既存設定、順位確率はBlues（青系）を適用
         styled_overall = df_overall_display.style.background_gradient(
             cmap='RdYlGn', subset=['Rating'], low=0.2, high=0.2
         ).background_gradient(
-            cmap='Oranges', 
-            subset=[f'PredStanding_{i}' for i in range(1, 9)],
+            cmap='Blues',  # グループステージと同じ青系に統一
+            subset=prob_cols,
             vmin=0.0, vmax=1.0
         ).format({
             'Rating': '{:.2f}',
-            **{f'PredStanding_{i}': '{:.3f}' for i in range(1, 9)}
+            **{col: '{:.3f}' for col in prob_cols}
         })
 
         st.dataframe(
