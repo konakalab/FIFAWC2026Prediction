@@ -36,7 +36,8 @@ if df is not None:
             f"データは [International football results from 1872 to 2026]"
             f"(https://www.kaggle.com/datasets/martj42/international-football-results-from-1872-to-2017) "
             f"を利用しています。 \n\n"
-            f"この予測を引用される場合は以下をコピーしてください．\n"
+            f"この予測を引用される場合は以下をコピーしてください．\n\n"
+            f"小中英嗣 (a.k.a konakalab) FIFAワールドカップ2026予測 (https://fifawc2026prediction-konakalab.streamlit.app/), 2026"
         )
          st.info(info_text)
 
