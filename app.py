@@ -32,7 +32,7 @@ if df is not None:
          start_date = df_train['date'].min().strftime('%Y-%m-%d')
          end_date = df_train['date'].max().strftime('%Y-%m-%d')
          info_text = (
-            f"**モデル学習期間:** {start_date} ～ {end_date}\n\n"
+            f"**モデル学習期間:** {start_date} ～ {end_date}.  "
             f"データは [International football results from 1872 to 2026]"
             f"(https://www.kaggle.com/datasets/martj42/international-football-results-from-1872-to-2017) "
             f"を利用しています。 "
