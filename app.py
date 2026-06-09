@@ -102,18 +102,15 @@ if df is not None:
     st.divider()
 
     # =========================================================================
-    #  大会全体の予測性能評価
+    # 大会全体の予測性能評価
     # =========================================================================
     file_h2h_result = 'table_prediction_h2h_withResult.csv'
     if os.path.exists(file_h2h_result):
         df_res = pd.read_csv(file_h2h_result)
         
-        # 終了した試合（結果フラグのいずれかが1のもの）のみを抽出
-        df_res = df_res[(df_res['aWin'] == 1) | (df_res['aDraw'] == 1) | (df_res['aLose'] == 1)].copy()
-        
         if not df_res.empty:
             st.subheader("📊 大会全体の予測性能評価")
-            st.write("有利（予測勝率が高い）と予測したチームの視点から、確率ごとの実際の着地（勝・分・敗）を集計しています。")
+            st.write("有利（勝率が高い）と予測したチームの視点から、確率ごとの実際の着地（勝・分・敗・未実施）を集計しています。")
             
             fav_probs = []
             actual_results = []
@@ -123,23 +120,32 @@ if df is not None:
                 p_d = float(row['pDraw'])
                 p_l = float(row['pLose'])
                 
-                # 予測勝率が高い方を判定
+                # 予測勝率が高い方を判定し、基準となる確率を計算
                 if p_w >= p_l:
                     p_fav = p_w + (p_d / 2.0)
-                    if row['aWin'] == 1:
-                        res = '有利側の勝利'
-                    elif row['aDraw'] == 1:
-                        res = '引き分け'
+                    
+                    # 【修正】GoalsAに値が入っている（実施済み）か未実施かで分岐
+                    if pd.notna(row['GoalsA']):
+                        if row['aWin'] == 1:
+                            res = '有利側の勝利'
+                        elif row['aDraw'] == 1:
+                            res = '引き分け'
+                        else:
+                            res = '有利側の敗北 (波乱)'
                     else:
-                        res = '有利側の敗北 (波乱)'
+                        res = '未実施'
                 else:
                     p_fav = p_l + (p_d / 2.0)
-                    if row['aLose'] == 1:
-                        res = '有利側の勝利'
-                    elif row['aDraw'] == 1:
-                        res = '引き分け'
+                    
+                    if pd.notna(row['GoalsA']):
+                        if row['aLose'] == 1:
+                            res = '有利側の勝利'
+                        elif row['aDraw'] == 1:
+                            res = '引き分け'
+                        else:
+                            res = '有利側の敗北 (波乱)'
                     else:
-                        res = '有利側の敗北 (波乱)'
+                        res = '未実施'
                         
                 fav_probs.append(p_fav)
                 actual_results.append(res)
@@ -155,10 +161,12 @@ if df is not None:
             
             df_chart = df_eval.groupby(['Prob_Bin', 'Result'], observed=False).size().reset_index(name='Count')
             
+            # 【修正】カラーマップに「未実施」を追加（白塗りの帯を表現するため、枠線付きの白、または非常に薄いグレー）
             eval_colors = {
                 '有利側の勝利': '#2222EE',
                 '引き分け': '#BDBDBD',
-                '有利側の敗北 (波乱)': '#C62828'
+                '有利側の敗北 (波乱)': '#C62828',
+                '未実施': '#FAFAFA'  # 未実施用の薄いグレー（白に近い色）
             }
             
             fig_perf = px.bar(
@@ -166,9 +174,9 @@ if df is not None:
                 x='Prob_Bin',
                 y='Count',
                 color='Result',
-                labels={'Prob_Bin': '有利側の予測勝率＋予測引き分け率/2', 'Count': '試合数', 'Result': '実際の結果'},
+                labels={'Prob_Bin': '有利側の予測勝率（調整値）', 'Count': '試合数', 'Result': '実際の結果'},
                 color_discrete_map=eval_colors,
-                category_orders={"Result": ['有利側の勝利', '引き分け', '有利側の敗北 (波乱)']}
+                category_orders={"Result": ['有利側の勝利', '引き分け', '有利側の敗北 (波乱)', '未実施']}
             )
             
             fig_perf.update_layout(
@@ -178,6 +186,9 @@ if df is not None:
                 xaxis=dict(tickfont=dict(size=14)),
                 yaxis=dict(tickfont=dict(size=14))
             )
+            
+            # 未実施の白帯にグレーの境界線を引いて目立たせる設定
+            fig_perf.update_traces(marker=dict(line=dict(color='#777777', width=1)))
             
             st.plotly_chart(fig_perf, use_container_width=True, key="overall_performance")
     # =========================================================================
