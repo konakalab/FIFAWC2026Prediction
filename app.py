@@ -124,7 +124,6 @@ if df is not None:
                 if p_w >= p_l:
                     p_fav = p_w + (p_d / 2.0)
                     
-                    # 【修正】GoalsAに値が入っている（実施済み）か未実施かで分岐
                     if pd.notna(row['GoalsA']):
                         if row['aWin'] == 1:
                             res = '有利側の勝利'
@@ -161,19 +160,50 @@ if df is not None:
             
             df_chart = df_eval.groupby(['Prob_Bin', 'Result'], observed=False).size().reset_index(name='Count')
             
-            # 【修正】カラーマップに「未実施」を追加（白塗りの帯を表現するため、枠線付きの白、または非常に薄いグレー）
             eval_colors = {
                 '有利側の勝利': '#2222EE',
                 '引き分け': '#BDBDBD',
                 '有利側の敗北 (波乱)': '#C62828',
-                '未実施': '#FAFAFA'  # 未実施用の薄いグレー（白に近い色）
+                '未実施': '#FAFAFA'
             }
             
+            # ─────────────────────────────────────────────────────────
+            # 追加: 比率（100%積み上げ）棒グラフ
+            # ─────────────────────────────────────────────────────────
+            fig_perf_pct = px.bar(
+                df_chart,
+                x='Prob_Bin',
+                y='Count',
+                color='Result',
+                title="予測確率別の結果比率",
+                labels={'Prob_Bin': '有利側の予測勝率（調整値）', 'Count': '比率', 'Result': '実際の結果'},
+                color_discrete_map=eval_colors,
+                category_orders={"Result": ['有利側の勝利', '引き分け', '有利側の敗北 (波乱)', '未実施']}
+            )
+            
+            fig_perf_pct.update_layout(
+                barmode='stack',
+                barnorm='percent',  # 100%積み上げ比率にする設定
+                font=dict(size=14),
+                margin=dict(l=40, r=40, t=40, b=30),
+                legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1, title_text=None),
+                xaxis=dict(tickfont=dict(size=14)),
+                yaxis=dict(tickfont=dict(size=14), ticks_suffix="%")
+            )
+            fig_perf_pct.update_traces(marker=dict(line=dict(color='#777777', width=1)))
+            
+            # 比率グラフの描画
+            st.plotly_chart(fig_perf_pct, use_container_width=True, key="overall_performance_pct")
+            
+            # ─────────────────────────────────────────────────────────
+            # 既存: 件数（実数カウント）棒グラフ
+            # ─────────────────────────────────────────────────────────
             fig_perf = px.bar(
                 df_chart,
                 x='Prob_Bin',
                 y='Count',
                 color='Result',
+                title="予測確率別の試合結果件数",
                 labels={'Prob_Bin': '有利側の予測勝率（調整値）', 'Count': '試合数', 'Result': '実際の結果'},
                 color_discrete_map=eval_colors,
                 category_orders={"Result": ['有利側の勝利', '引き分け', '有利側の敗北 (波乱)', '未実施']}
@@ -181,16 +211,15 @@ if df is not None:
             
             fig_perf.update_layout(
                 font=dict(size=14),
-                margin=dict(l=40, r=40, t=30, b=40),
+                margin=dict(l=40, r=40, t=40, b=40),
                 legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1, title_text=None),
                 xaxis=dict(tickfont=dict(size=14)),
                 yaxis=dict(tickfont=dict(size=14))
             )
-            
-            # 未実施の白帯にグレーの境界線を引いて目立たせる設定
             fig_perf.update_traces(marker=dict(line=dict(color='#777777', width=1)))
             
-            st.plotly_chart(fig_perf, use_container_width=True, key="overall_performance")
+            # 件数グラフの描画
+            st.plotly_chart(fig_perf, use_container_width=True, key="overall_performance_count")
     # =========================================================================
     # 
     # =========================================================================
