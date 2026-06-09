@@ -188,7 +188,8 @@ if df is not None:
                 margin=dict(l=40, r=40, t=40, b=30),
                 legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1, title_text=None),
                 xaxis=dict(tickfont=dict(size=14)),
-                yaxis=dict(tickfont=dict(size=14), ticks_suffix="%")
+                # 【修正】ticks_suffix="%" を ticksuffix="%" に変更
+                yaxis=dict(tickfont=dict(size=14), ticksuffix="%")
             )
             fig_perf_pct.update_traces(marker=dict(line=dict(color='#777777', width=1)))
             
