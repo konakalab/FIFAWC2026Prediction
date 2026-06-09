@@ -111,6 +111,7 @@ if df is not None:
         if not df_res.empty:
             st.subheader("📊 大会全体の予測性能評価")
             st.write("有利（勝率が高い）と予測したチームの視点から、確率ごとの実際の着地（勝・分・敗・未実施）を集計しています。")
+            st.write("「予測勝率(調整値)」は(予測勝率)+(予測引き分け率)/2 の値を意味していま．")
             
             fav_probs = []
             actual_results = []
@@ -191,7 +192,7 @@ if df is not None:
                     x=ideal_x,
                     y=ideal_y,
                     mode='lines+markers',
-                    name='予測と結果が一致する理論線',
+                    name='予測と結果が一致',
                     line=dict(color='#222222', width=3, dash='dash'), # 黒ベースの太い破線
                     marker=dict(size=8, color='#222222'),
                     hoverinfo='skip'
