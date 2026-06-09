@@ -166,7 +166,7 @@ if df is not None:
                 x='Prob_Bin',
                 y='Count',
                 color='Result',
-                labels={'Prob_Bin': '有利側の予測勝率（調整値）', 'Count': '試合数', 'Result': '実際の結果'},
+                labels={'Prob_Bin': '有利側の予測勝率＋予測引き分け率/2', 'Count': '試合数', 'Result': '実際の結果'},
                 color_discrete_map=eval_colors,
                 category_orders={"Result": ['有利側の勝利', '引き分け', '有利側の敗北 (波乱)']}
             )
