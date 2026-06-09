@@ -98,7 +98,91 @@ if df is not None:
         )
     else:
         st.write("大会予測データが見つかりません。")
+
+    st.divider()
+
+    # =========================================================================
+    # 【ここから挿入】 大会全体の予測性能評価
+    # =========================================================================
+    file_h2h_result = 'table_prediction_h2h_withResult.csv'
+    if os.path.exists(file_h2h_result):
+        df_res = pd.read_csv(file_h2h_result)
         
+        # 終了した試合（結果フラグのいずれかが1のもの）のみを抽出
+        df_res = df_res[(df_res['aWin'] == 1) | (df_res['aDraw'] == 1) | (df_res['aLose'] == 1)].copy()
+        
+        if not df_res.empty:
+            st.subheader("📊 大会全体のAI予測性能評価")
+            st.write("AIが有利（勝率が高い）と予測したチームの視点から、確率ごとの実際の着地（勝・分・敗）を集計しています。")
+            
+            fav_probs = []
+            actual_results = []
+            
+            for _, row in df_res.iterrows():
+                p_w = float(row['pWin'])
+                p_d = float(row['pDraw'])
+                p_l = float(row['pLose'])
+                
+                if p_w >= p_l:
+                    p_fav = p_w + (p_d / 2.0)
+                    if row['aWin'] == 1:
+                        res = '有利側の勝利'
+                    elif row['aDraw'] == 1:
+                        res = '引き分け'
+                    else:
+                        res = '有利側の敗北 (波乱)'
+                else:
+                    p_fav = p_l + (p_d / 2.0)
+                    if row['aLose'] == 1:
+                        res = '有利側の勝利'
+                    elif row['aDraw'] == 1:
+                        res = '引き分け'
+                    else:
+                        res = '有利側の敗北 (波乱)'
+                        
+                fav_probs.append(p_fav)
+                actual_results.append(res)
+                
+            df_eval = pd.DataFrame({
+                'Prob': fav_probs,
+                'Result': actual_results
+            })
+            
+            bins = [0.5, 0.6, 0.7, 0.8, 0.9, 1.0]
+            labels = ['50-60%', '60-70%', '70-80%', '80-90%', '90-100%']
+            df_eval['Prob_Bin'] = pd.cut(df_eval['Prob'], bins=bins, labels=labels, right=False)
+            
+            df_chart = df_eval.groupby(['Prob_Bin', 'Result'], observed=False).size().reset_index(name='Count')
+            
+            eval_colors = {
+                '有利側の勝利': '#2222EE',
+                '引き分け': '#BDBDBD',
+                '有利側の敗北 (波乱)': '#C62828'
+            }
+            
+            fig_perf = px.bar(
+                df_chart,
+                x='Prob_Bin',
+                y='Count',
+                color='Result',
+                labels={'Prob_Bin': '有利側の予測勝率（調整値）', 'Count': '試合数', 'Result': '実際の結果'},
+                color_discrete_map=eval_colors,
+                category_orders={"Result": ['有利側の勝利', '引き分け', '有利側の敗北 (波乱)']}
+            )
+            
+            fig_perf.update_layout(
+                font=dict(size=14),
+                margin=dict(l=40, r=40, t=30, b=40),
+                legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1, title_text=None),
+                xaxis=dict(tickfont=dict(size=14)),
+                yaxis=dict(tickfont=dict(size=14))
+            )
+            
+            st.plotly_chart(fig_perf, use_container_width=True, key="overall_performance")
+    # =========================================================================
+    # 【ここまで挿入】
+    # =========================================================================
+    
     st.divider()
 
     st.subheader("グループステージ")
