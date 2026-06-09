@@ -168,7 +168,7 @@ if df is not None:
             }
             
             # ─────────────────────────────────────────────────────────
-            # 追加: 比率（100%積み上げ）棒グラフ
+            # 追加: 比率（100%積み上げ）棒グラフ + 予測一致直線
             # ─────────────────────────────────────────────────────────
             fig_perf_pct = px.bar(
                 df_chart,
@@ -181,6 +181,23 @@ if df is not None:
                 category_orders={"Result": ['有利側の勝利', '引き分け', '有利側の敗北 (波乱)', '未実施']}
             )
             
+            # 各階級の中央値（理想的な的中率）をプロットする直線のデータを追加
+            # 横軸のラベル（Labels）の並び順と一致させます
+            ideal_x = ['50-60%', '60-70%', '70-80%', '80-90%', '90-100%']
+            ideal_y = [55, 65, 75, 85, 95]  # 各階級の中央値をパーセント（0-100）で指定
+            
+            fig_perf_pct.add_trace(
+                go.Scatter(
+                    x=ideal_x,
+                    y=ideal_y,
+                    mode='lines+markers',
+                    name='予測と結果が一致する理論線',
+                    line=dict(color='#222222', width=3, dash='dash'), # 黒ベースの太い破線
+                    marker=dict(size=8, color='#222222'),
+                    hoverinfo='skip'
+                )
+            )
+            
             fig_perf_pct.update_layout(
                 barmode='stack',
                 barnorm='percent',  # 100%積み上げ比率にする設定
@@ -188,10 +205,13 @@ if df is not None:
                 margin=dict(l=40, r=40, t=40, b=30),
                 legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1, title_text=None),
                 xaxis=dict(tickfont=dict(size=14)),
-                # 【修正】ticks_suffix="%" を ticksuffix="%" に変更
+                # 【エラー修正済】ticksuffix を使用
                 yaxis=dict(tickfont=dict(size=14), ticksuffix="%")
             )
-            fig_perf_pct.update_traces(marker=dict(line=dict(color='#777777', width=1)))
+            fig_perf_pct.update_traces(
+                marker=dict(line=dict(color='#777777', width=1)),
+                selector=dict(type='bar') # 枠線は棒グラフ（bar）だけに適用し、直線には適用させない
+            )
             
             # 比率グラフの描画
             st.plotly_chart(fig_perf_pct, use_container_width=True, key="overall_performance_pct")
