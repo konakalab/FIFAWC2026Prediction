@@ -102,7 +102,7 @@ if df is not None:
     st.divider()
 
     # =========================================================================
-    # 【ここから挿入】 大会全体の予測性能評価
+    #  大会全体の予測性能評価
     # =========================================================================
     file_h2h_result = 'table_prediction_h2h_withResult.csv'
     if os.path.exists(file_h2h_result):
@@ -112,8 +112,8 @@ if df is not None:
         df_res = df_res[(df_res['aWin'] == 1) | (df_res['aDraw'] == 1) | (df_res['aLose'] == 1)].copy()
         
         if not df_res.empty:
-            st.subheader("📊 大会全体のAI予測性能評価")
-            st.write("AIが有利（勝率が高い）と予測したチームの視点から、確率ごとの実際の着地（勝・分・敗）を集計しています。")
+            st.subheader("📊 大会全体の予測性能評価")
+            st.write("有利（予測勝率が高い）と予測したチームの視点から、確率ごとの実際の着地（勝・分・敗）を集計しています。")
             
             fav_probs = []
             actual_results = []
@@ -123,6 +123,7 @@ if df is not None:
                 p_d = float(row['pDraw'])
                 p_l = float(row['pLose'])
                 
+                # 予測勝率が高い方を判定
                 if p_w >= p_l:
                     p_fav = p_w + (p_d / 2.0)
                     if row['aWin'] == 1:
@@ -180,7 +181,7 @@ if df is not None:
             
             st.plotly_chart(fig_perf, use_container_width=True, key="overall_performance")
     # =========================================================================
-    # 【ここまで挿入】
+    # 
     # =========================================================================
     
     st.divider()
