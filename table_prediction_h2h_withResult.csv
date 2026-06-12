@@ -1,6 +1,6 @@
 Date,TeamA,TeamB,Group,GoalsA,GoalsB,matchURL,CodeA,CodeB,pWin,pDraw,pLose,aWin,aDraw,aLose
-2026/6/11,Mexico,South Africa,A,,,,MEX,RSA,0.716,0.197,0.086,0,1,0
-2026/6/11,South Korea,Czech Republic,A,,,,KOR,CZE,0.371,0.341,0.288,0,1,0
+2026/6/11,Mexico,South Africa,A,2,0,,MEX,RSA,0.716,0.197,0.086,1,0,0
+2026/6/11,South Korea,Czech Republic,A,2,1,,KOR,CZE,0.371,0.341,0.288,1,0,0
 2026/6/12,Australia,Turkey,D,,,,AUS,TUR,0.341,0.343,0.315,0,1,0
 2026/6/12,Qatar,Switzerland,B,,,,QAT,SUI,0.056,0.143,0.801,0,1,0
 2026/6/12,Canada,Bosnia and Herzegovina,B,,,,CAN,BIH,0.734,0.186,0.079,0,1,0
