@@ -370,37 +370,49 @@ if df is not None:
                 for idx, row in group_matches.iterrows():
                     st.write(f"**{row['Date']} {row['TeamA']} vs {row['TeamB']}**")
                     
+                    # 的中・外れを判定して透明度(opacity)を決定するロジック
+                    probs = {'Win': row['pWin'], 'Draw': row['pDraw'], 'Lose': row['pLose']}
+                    predicted_status = max(probs, key=probs.get)
+                    
+                    actual_status = None
+                    if 'aWin' in row and row['aWin'] == 1:
+                        actual_status = 'Win'
+                    elif 'aDraw' in row and row['aDraw'] == 1:
+                        actual_status = 'Draw'
+                    elif 'aLose' in row and row['aLose'] == 1:
+                        actual_status = 'Lose'
+                        
+                    # 的中なら通常(1.0)、外れなら半透明(0.25)、結果未入なら通常(1.0)
+                    if actual_status is None:
+                        current_opacity = 1.0
+                    elif predicted_status == actual_status:
+                        current_opacity = 1.0
+                    else:
+                        current_opacity = 0.25
+
                     fig_h2h = go.Figure()
+                    
                     fig_h2h.add_trace(go.Bar(
-                        x=[row['pWin']], y=["Match"],
-                        orientation='h',
-                        marker=dict(color='#2222EE'),
-                        text=f"{row['CodeA']} {row['pWin']:.1%}",
-                        textposition='inside',
-                        insidetextanchor='middle',
-                        textfont=dict(size=20),
+                        x=[row['pWin']], y=[""], orientation='h',
+                        marker=dict(color='#2A6F97', opacity=current_opacity),
+                        text=f"<b>{'★ ' if actual_status=='Win' else ''}{row['pWin']*100:.1f}%</b>" if row['pWin'] > 0.05 else "",
+                        textposition="inside", textfont=dict(size=20),
                         hoverinfo="skip",
                         name=f"{row['CodeA']} 勝"
                     ))
                     fig_h2h.add_trace(go.Bar(
-                        x=[row['pDraw']], y=["Match"],
-                        orientation='h',
-                        marker=dict(color='#BDBDBD'),
-                        text=f"Draw {row['pDraw']:.1%}",
-                        textposition='inside',
-                        insidetextanchor='middle',
-                        textfont=dict(size=20),
+                        x=[row['pDraw']], y=[""], orientation='h',
+                        marker=dict(color='#A8A8A8', opacity=current_opacity),
+                        text=f"<b>{'★ ' if actual_status=='Draw' else ''}{row['pDraw']*100:.1f}%</b>" if row['pDraw'] > 0.05 else "",
+                        textposition="inside", textfont=dict(size=20),
                         hoverinfo="skip",
-                        name="引分"
+                        name="引き分け"
                     ))
                     fig_h2h.add_trace(go.Bar(
-                        x=[row['pLose']], y=["Match"],
-                        orientation='h',
-                        marker=dict(color='#C62828'),
-                        text=f"{row['CodeB']} {row['pLose']:.1%}",
-                        textposition='inside',
-                        insidetextanchor='middle',
-                        textfont=dict(size=20),
+                        x=[row['pLose']], y=[""], orientation='h',
+                        marker=dict(color='#A13D63', opacity=current_opacity),
+                        text=f"<b>{'★ ' if actual_status=='Lose' else ''}{row['pLose']*100:.1f}%</b>" if row['pLose'] > 0.05 else "",
+                        textposition="inside", textfont=dict(size=20),
                         hoverinfo="skip",
                         name=f"{row['CodeB']} 勝"
                     ))
