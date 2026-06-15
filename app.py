@@ -370,18 +370,15 @@ if df is not None:
                 for idx, row in group_matches.iterrows():
                     st.write(f"**{row['Date']} {row['TeamA']} vs {row['TeamB']}**")
                     
-                    for idx, row in group_matches.iterrows():
-                        st.write(f"**{row['Date']} {row['TeamA']} vs {row['TeamB']}**")
+                    # ── 修正点：結果が実際に記録されているか（GoalsA が NaN でないか）を先にチェック ──
+                    has_result = 'GoalsA' in row.index and pd.notna(row['GoalsA'])
 
-                        # ── 修正点：結果が実際に記録されているか（GoalsA が NaN でないか）を先にチェック ──
-                        has_result = 'GoalsA' in row.index and pd.notna(row['GoalsA'])
-
-                        if has_result:
-                            a_win  = float(row['aWin'])  if ('aWin'  in row.index and pd.notna(row['aWin']))  else 0.0
-                            a_draw = float(row['aDraw']) if ('aDraw' in row.index and pd.notna(row['aDraw'])) else 0.0
-                            a_lose = float(row['aLose']) if ('aLose' in row.index and pd.notna(row['aLose'])) else 0.0
-                        else:
-                            a_win = a_draw = a_lose = 0.0  # 未実施は全フラグ 0
+                    if has_result:
+                        a_win  = float(row['aWin'])  if ('aWin'  in row.index and pd.notna(row['aWin']))  else 0.0
+                        a_draw = float(row['aDraw']) if ('aDraw' in row.index and pd.notna(row['aDraw'])) else 0.0
+                        a_lose = float(row['aLose']) if ('aLose' in row.index and pd.notna(row['aLose'])) else 0.0
+                    else:
+                        a_win = a_draw = a_lose = 0.0  # 未実施は全フラグ 0
 
                     fig_h2h = go.Figure()
 
