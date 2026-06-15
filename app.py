@@ -371,37 +371,33 @@ if df is not None:
                     st.write(f"**{row['Date']} {row['TeamA']} vs {row['TeamB']}**")
                     
                     # === [修正後] 373行目からの置き換え用コード ===
-                    # 1. Pandasの欠損値(NaN)や数値型を100%安全にフラグ判定する処理
-                    def is_result_one(val):
-                        if pd.isna(val): # セルが空欄(NaN)の場合は確実に対象外
-                            return False
-                        try:
-                            return float(val) == 1.0 # 1 または 1.0 であれば True
-                        except:
-                            return False
+                    # 1. 各項目のベースカラー (RGB)
+                    rgb_win  = "42, 111, 151"   # #2A6F97
+                    rgb_draw = "168, 168, 168" # #A8A8A8
+                    rgb_lose = "161, 61, 99"   # #A13D63
 
-                    a_win_played = is_result_one(row.get('aWin'))
-                    a_draw_played = is_result_one(row.get('aDraw'))
-                    a_lose_played = is_result_one(row.get('aLose'))
+                    # 2. 実際の結果フラグを安全に判定 (NaNを回避)
+                    a_win_played  = bool('aWin' in row and float(row['aWin']) == 1.0)
+                    a_draw_played = bool('aDraw' in row and float(row['aDraw']) == 1.0)
+                    a_lose_played = bool('aLose' in row and float(row['aLose']) == 1.0)
                     
-                    # 2. 実際に試合が行われたか（いずれかの結果フラグが1になっているか）
                     is_match_played = a_win_played or a_draw_played or a_lose_played
 
-                    # 3. 各項目（Win, Draw, Lose）の透明度をご指示通りに個別決定
-                    # 試合前ならすべて1.0（鮮やか）、試合後は「結果と一致する部分だけ1.0、それ以外は0.25」
+                    # 3. ご指示通り、結果と一致する部分だけ1.0、それ以外は0.25のアルファ値を設定
+                    # 試合前ならすべて1.0（鮮やか）
                     if not is_match_played:
-                        op_win, op_draw, op_lose = 1.0, 1.0, 1.0
+                        alpha_win, alpha_draw, alpha_lose = 1.0, 1.0, 1.0
                     else:
-                        op_win = 1.0 if a_win_played else 0.25
-                        op_draw = 1.0 if a_draw_played else 0.25
-                        op_lose = 1.0 if a_lose_played else 0.25
+                        alpha_win  = 1.0 if a_win_played else 0.25
+                        alpha_draw = 1.0 if a_draw_played else 0.25
+                        alpha_lose = 1.0 if a_lose_played else 0.25
 
                     fig_h2h = go.Figure()
                     
-                    # 各帯の marker=dict(..., opacity=...) にそれぞれの透明度を適用
+                    # 4. markerのcolorに rgba() を使って透明度を直接注入
                     fig_h2h.add_trace(go.Bar(
                         x=[float(row['pWin'])], y=[""], orientation='h',
-                        marker=dict(color='#2A6F97', opacity=op_win),
+                        marker=dict(color=f"rgba({rgb_win}, {alpha_win})"),
                         text=f"<b>{'★ ' if a_win_played else ''}{float(row['pWin'])*100:.1f}%</b>" if float(row['pWin']) > 0.05 else "",
                         textposition="inside", textfont=dict(size=20),
                         hoverinfo="skip",
@@ -409,7 +405,7 @@ if df is not None:
                     ))
                     fig_h2h.add_trace(go.Bar(
                         x=[float(row['pDraw'])], y=[""], orientation='h',
-                        marker=dict(color='#A8A8A8', opacity=op_draw),
+                        marker=dict(color=f"rgba({rgb_draw}, {alpha_draw})"),
                         text=f"<b>{'★ ' if a_draw_played else ''}{float(row['pDraw'])*100:.1f}%</b>" if float(row['pDraw']) > 0.05 else "",
                         textposition="inside", textfont=dict(size=20),
                         hoverinfo="skip",
@@ -417,7 +413,7 @@ if df is not None:
                     ))
                     fig_h2h.add_trace(go.Bar(
                         x=[float(row['pLose'])], y=[""], orientation='h',
-                        marker=dict(color='#A13D63', opacity=op_lose),
+                        marker=dict(color=f"rgba({rgb_lose}, {alpha_lose})"),
                         text=f"<b>{'★ ' if a_lose_played else ''}{float(row['pLose'])*100:.1f}%</b>" if float(row['pLose']) > 0.05 else "",
                         textposition="inside", textfont=dict(size=20),
                         hoverinfo="skip",
