@@ -370,35 +370,20 @@ if df is not None:
                 for idx, row in group_matches.iterrows():
                     st.write(f"**{row['Date']} {row['TeamA']} vs {row['TeamB']}**")
                     
-                    # === [デバッグ用] 373行目からの置き換え用コード ===
-                    # 1. 元のデータをそのまま取得（型や値を確認するため）
-                    raw_win  = row.get('aWin')
-                    raw_draw = row.get('aDraw')
-                    raw_lose = row.get('aLose')
-
-                    # 2. 【コンソール出力】実際の値と「型(type)」をログに書き出す
-                    print(f"[DEBUG] Match: {row['CodeA']} vs {row['CodeB']}")
-                    print(f"        aWin  = {repr(raw_win)} (Type: {type(raw_win)})")
-                    print(f"        aDraw = {repr(raw_draw)} (Type: {type(raw_draw)})")
-                    print(f"        aLose = {repr(raw_lose)} (Type: {type(raw_lose)})")
-
-                    # 3. 安全に数値変換
-                    a_win  = float(raw_win)  if raw_win  is not None else 0.0
-                    a_draw = float(raw_draw) if raw_draw is not None else 0.0
-                    a_lose = float(raw_lose) if raw_lose is not None else 0.0
+                    # === [修正後] 373行目からの置き換え用コード ===
+                    # pd（Pandas）を一切使わず、0または1の数値型として安全に直接判定
+                    a_win  = float(row['aWin'])  if 'aWin' in row  else 0.0
+                    a_draw = float(row['aDraw']) if 'aDraw' in row else 0.0
+                    a_lose = float(row['aLose']) if 'aLose' in row else 0.0
 
                     fig_h2h = go.Figure()
                     
-                    # 4. 実際の結果（1.0）と一致する部分のテキストのみ <b> </b> を付与して太字にする
-                    text_win  = f"<b>{row['CodeA']} {row['pWin']:.1%}</b>" if a_win == 1.0 else f"{row['CodeA']} {row['pWin']:.1%}"
-                    text_draw = f"<b>Draw {row['pDraw']:.1%}</b>"        if a_draw == 1.0 else f"Draw {row['pDraw']:.1%}"
-                    text_lose = f"<b>{row['CodeB']} {row['pLose']:.1%}</b>" if a_lose == 1.0 else f"{row['CodeB']} {row['pLose']:.1%}"
-                    # 3. 帯グラフの描画（オリジナルカラーを100%維持し、動的に判定したテキストを適用）
+                    # 元の鮮やかなカラーとテキスト表記に完全復元
                     fig_h2h.add_trace(go.Bar(
                         x=[row['pWin']], y=["Match"],
                         orientation='h',
                         marker=dict(color='#2222EE'),
-                        text=text_win,
+                        text=f"{row['CodeA']} {row['pWin']:.1%}",
                         textposition='inside',
                         insidetextanchor='middle',
                         textfont=dict(size=20),
@@ -409,7 +394,7 @@ if df is not None:
                         x=[row['pDraw']], y=["Match"],
                         orientation='h',
                         marker=dict(color='#BDBDBD'),
-                        text=text_draw,
+                        text=f"Draw {row['pDraw']:.1%}",
                         textposition='inside',
                         insidetextanchor='middle',
                         textfont=dict(size=20),
@@ -420,7 +405,7 @@ if df is not None:
                         x=[row['pLose']], y=["Match"],
                         orientation='h',
                         marker=dict(color='#C62828'),
-                        text=text_lose,
+                        text=f"{row['CodeB']} {row['pLose']:.1%}",
                         textposition='inside',
                         insidetextanchor='middle',
                         textfont=dict(size=20),
