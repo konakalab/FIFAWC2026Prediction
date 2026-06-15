@@ -370,25 +370,42 @@ if df is not None:
                 for idx, row in group_matches.iterrows():
                     st.write(f"**{row['Date']} {row['TeamA']} vs {row['TeamB']}**")
                     
-                    # 的中・外れを判定して透明度(opacity)を決定するロジック
-                    probs = {'Win': row['pWin'], 'Draw': row['pDraw'], 'Lose': row['pLose']}
+                    # === [修正後] 373行目からの置き換え用コード ===
+                    # 的中・外れを確実に判定するための堅牢なロジック
+                    try:
+                        # 安全に数値型(float)にキャストして比較
+                        p_win_val = float(row['pWin'])
+                        p_draw_val = float(row['pDraw'])
+                        p_lose_val = float(row['pLose'])
+                    except:
+                        p_win_val, p_draw_val, p_lose_val = 0.0, 0.0, 0.0
+
+                    probs = {'Win': p_win_val, 'Draw': p_draw_val, 'Lose': p_lose_val}
                     predicted_status = max(probs, key=probs.get)
                     
+                    # 実際の結果を特定 (0または1のフラグ判定)
                     actual_status = None
-                    if 'aWin' in row and row['aWin'] == 1:
+                    if 'aWin' in row and int(row['aWin']) == 1:
                         actual_status = 'Win'
-                    elif 'aDraw' in row and row['aDraw'] == 1:
+                    elif 'aDraw' in row and int(row['aDraw']) == 1:
                         actual_status = 'Draw'
-                    elif 'aLose' in row and row['aLose'] == 1:
+                    elif 'aLose' in row and int(row['aLose']) == 1:
                         actual_status = 'Lose'
                         
-                    # 的中なら通常(1.0)、外れなら半透明(0.25)、結果未入なら通常(1.0)
-                    if actual_status is None:
-                        current_opacity = 1.0
+                    # 【重要】試合前（まだ結果フラグがどれも1になっていない場合）の判定
+                    # aWin, aDraw, aLose がすべて 0、または存在しない場合は試合前とみなす
+                    is_match_played = False
+                    if 'aWin' in row and 'aDraw' in row and 'aLose' in row:
+                        if int(row['aWin']) == 1 or int(row['aDraw']) == 1 or int(row['aLose']) == 1:
+                            is_match_played = True
+
+                    # 試合前なら鮮やか(1.0)、試合後で的中なら通常(1.0)、外れなら半透明(0.25)
+                    if not is_match_played:
+                        current_opacity = 1.0  # これからの試合はくすませない
                     elif predicted_status == actual_status:
-                        current_opacity = 1.0
+                        current_opacity = 1.0  # 的中した試合は鮮やかに強調
                     else:
-                        current_opacity = 0.25
+                        current_opacity = 0.25 # 外れた試合だけをくすませる
 
                     fig_h2h = go.Figure()
                     
