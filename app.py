@@ -371,64 +371,46 @@ if df is not None:
                     st.write(f"**{row['Date']} {row['TeamA']} vs {row['TeamB']}**")
                     
                     # === [修正後] 373行目からの置き換え用コード ===
-                    # 的中・外れ・試合前を100%確実に判定する処理
-                    try:
-                        p_win_val = float(row['pWin'])
-                        p_draw_val = float(row['pDraw'])
-                        p_lose_val = float(row['pLose'])
-                    except:
-                        p_win_val, p_draw_val, p_lose_val = 0.0, 0.0, 0.0
-
-                    # モデルの予測（最大確率の項目）
-                    probs = {'Win': p_win_val, 'Draw': p_draw_val, 'Lose': p_lose_val}
-                    predicted_status = max(probs, key=probs.get)
+                    # 実際の結果フラグを安全に取得 (1 または 1.0 に対応)
+                    a_win_played = str(row.get('aWin', '0')).strip().startswith('1')
+                    a_draw_played = str(row.get('aDraw', '0')).strip().startswith('1')
+                    a_lose_played = str(row.get('aLose', '0')).strip().startswith('1')
                     
-                    # 実際の結果を文字列ベースで確実に判定 (1 や 1.0 に対応)
-                    a_win_str = str(row.get('aWin', '0')).strip()
-                    a_draw_str = str(row.get('aDraw', '0')).strip()
-                    a_lose_str = str(row.get('aLose', '0')).strip()
+                    # 実際に試合が行われたか（いずれかの結果フラグが1になっているか）
+                    is_match_played = a_win_played or a_draw_played or a_lose_played
 
-                    actual_status = None
-                    if a_win_str.startswith('1'):
-                        actual_status = 'Win'
-                    elif a_draw_str.startswith('1'):
-                        actual_status = 'Draw'
-                    elif a_lose_str.startswith('1'):
-                        actual_status = 'Lose'
-                        
-                    # 実際に試合が行われたか（いずれかの結果が 1 かどうか）
-                    is_match_played = actual_status is not None
-
-                    # 試合前なら鮮やか(1.0)、的中なら鮮やか(1.0)、外れなら半透明(0.25)
+                    # 各項目（Win, Draw, Lose）の透明度をご指示通りに個別決定
+                    # 試合前ならすべて1.0、試合後なら「実際の結果と一致する部分だけ1.0、それ以外は0.25」
                     if not is_match_played:
-                        current_opacity = 1.0  # 未来の試合は鮮やかに保つ
-                    elif predicted_status == actual_status:
-                        current_opacity = 1.0  # 的中した試合も鮮やか
+                        op_win, op_draw, op_lose = 1.0, 1.0, 1.0
                     else:
-                        current_opacity = 0.25 # 外れた試合だけをくすませる
+                        op_win = 1.0 if a_win_played else 0.25
+                        op_draw = 1.0 if a_draw_played else 0.25
+                        op_lose = 1.0 if a_lose_played else 0.25
 
                     fig_h2h = go.Figure()
                     
+                    # 各帯の marker=dict(..., opacity=...) にそれぞれの透明度を適用します
                     fig_h2h.add_trace(go.Bar(
-                        x=[p_win_val], y=[""], orientation='h',
-                        marker=dict(color='#2A6F97', opacity=current_opacity),
-                        text=f"<b>{'★ ' if actual_status=='Win' else ''}{p_win_val*100:.1f}%</b>" if p_win_val > 0.05 else "",
+                        x=[float(row['pWin'])], y=[""], orientation='h',
+                        marker=dict(color='#2A6F97', opacity=op_win),
+                        text=f"<b>{'★ ' if a_win_played else ''}{float(row['pWin'])*100:.1f}%</b>" if float(row['pWin']) > 0.05 else "",
                         textposition="inside", textfont=dict(size=20),
                         hoverinfo="skip",
                         name=f"{row['CodeA']} 勝"
                     ))
                     fig_h2h.add_trace(go.Bar(
-                        x=[p_draw_val], y=[""], orientation='h',
-                        marker=dict(color='#A8A8A8', opacity=current_opacity),
-                        text=f"<b>{'★ ' if actual_status=='Draw' else ''}{p_draw_val*100:.1f}%</b>" if p_draw_val > 0.05 else "",
+                        x=[float(row['pDraw'])], y=[""], orientation='h',
+                        marker=dict(color='#A8A8A8', opacity=op_draw),
+                        text=f"<b>{'★ ' if a_draw_played else ''}{float(row['pDraw'])*100:.1f}%</b>" if float(row['pDraw']) > 0.05 else "",
                         textposition="inside", textfont=dict(size=20),
                         hoverinfo="skip",
                         name="引き分け"
                     ))
                     fig_h2h.add_trace(go.Bar(
-                        x=[p_lose_val], y=[""], orientation='h',
-                        marker=dict(color='#A13D63', opacity=current_opacity),
-                        text=f"<b>{'★ ' if actual_status=='Lose' else ''}{p_lose_val*100:.1f}%</b>" if p_lose_val > 0.05 else "",
+                        x=[float(row['pLose'])], y=[""], orientation='h',
+                        marker=dict(color='#A13D63', opacity=op_lose),
+                        text=f"<b>{'★ ' if a_lose_played else ''}{float(row['pLose'])*100:.1f}%</b>" if float(row['pLose']) > 0.05 else "",
                         textposition="inside", textfont=dict(size=20),
                         hoverinfo="skip",
                         name=f"{row['CodeB']} 勝"
