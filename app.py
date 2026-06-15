@@ -370,18 +370,28 @@ if df is not None:
                 for idx, row in group_matches.iterrows():
                     st.write(f"**{row['Date']} {row['TeamA']} vs {row['TeamB']}**")
                     
-                    # === [修正後] 373行目からの置き換え用コード ===
-                    # 1. 各項目の結果フラグを安全に浮動小数点数（float）として取得
-                    a_win  = float(row['aWin'])  if 'aWin' in row  else 0.0
-                    a_draw = float(row['aDraw']) if 'aDraw' in row else 0.0
-                    a_lose = float(row['aLose']) if 'aLose' in row else 0.0
+                    for idx, row in group_matches.iterrows():
+    st.write(f"**{row['Date']} {row['TeamA']} vs {row['TeamB']}**")
 
-                    fig_h2h = go.Figure()
-                    
-                    # 2. 結果が 1.0 であるセグメントのテキストの先頭にのみ ★ を付与
-                    text_win  = f"★ {row['CodeA']} {row['pWin']:.1%}" if a_win == 1.0  else f"{row['CodeA']} {row['pWin']:.1%}"
-                    text_draw = f"★ Draw {row['pDraw']:.1%}"        if a_draw == 1.0 else f"Draw {row['pDraw']:.1%}"
-                    text_lose = f"★ {row['CodeB']} {row['pLose']:.1%}" if a_lose == 1.0 else f"{row['CodeB']} {row['pLose']:.1%}"
+    # ── 修正点：結果が実際に記録されているか（GoalsA が NaN でないか）を先にチェック ──
+    has_result = 'GoalsA' in row.index and pd.notna(row['GoalsA'])
+
+    if has_result:
+        a_win  = float(row['aWin'])  if ('aWin'  in row.index and pd.notna(row['aWin']))  else 0.0
+        a_draw = float(row['aDraw']) if ('aDraw' in row.index and pd.notna(row['aDraw'])) else 0.0
+        a_lose = float(row['aLose']) if ('aLose' in row.index and pd.notna(row['aLose'])) else 0.0
+    else:
+        a_win = a_draw = a_lose = 0.0  # 未実施は全フラグ 0
+
+    fig_h2h = go.Figure()
+
+    # ★ は試合が実施済みのときだけ付与
+    text_win  = f"★ {row['CodeA']} {row['pWin']:.1%}"  if (has_result and a_win  == 1.0) else f"{row['CodeA']} {row['pWin']:.1%}"
+    text_draw = f"★ Draw {row['pDraw']:.1%}"           if (has_result and a_draw == 1.0) else f"Draw {row['pDraw']:.1%}"
+    text_lose = f"★ {row['CodeB']} {row['pLose']:.1%}" if (has_result and a_lose == 1.0) else f"{row['CodeB']} {row['pLose']:.1%}"
+
+    # 以降はグラフ描画コード（変更なし）
+    ...
 
                     # 3. 帯グラフの描画（オリジナル設定・カラーを100%完全維持）
                     fig_h2h.add_trace(go.Bar(
