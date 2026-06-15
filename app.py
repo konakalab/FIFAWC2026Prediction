@@ -387,7 +387,7 @@ if df is not None:
                     fig_h2h.add_trace(go.Bar(
                         x=[row['pWin']], y=["Match"],
                         orientation='h',
-                        marker=dict(color='#2222EE', line=dict(color='#000000', width=lw_win)),
+                        marker=dict(color='#2222EE', line=dict(color='#000000', width=5)),
                         text=f"{row['CodeA']} {row['pWin']:.1%}",
                         textposition='inside',
                         insidetextanchor='middle',
