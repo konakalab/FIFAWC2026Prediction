@@ -370,52 +370,37 @@ if df is not None:
                 for idx, row in group_matches.iterrows():
                     st.write(f"**{row['Date']} {row['TeamA']} vs {row['TeamB']}**")
                     
-                    # === [修正後] 373行目からの置き換え用コード ===
-                    # 1. 各項目のベースカラー (RGB)
-                    rgb_win  = "42, 111, 151"   # #2A6F97
-                    rgb_draw = "168, 168, 168" # #A8A8A8
-                    rgb_lose = "161, 61, 99"   # #A13D63
-
-                    # 2. 実際の結果フラグを安全に判定 (NaNを回避)
-                    a_win_played  = bool('aWin' in row and float(row['aWin']) == 1.0)
-                    a_draw_played = bool('aDraw' in row and float(row['aDraw']) == 1.0)
-                    a_lose_played = bool('aLose' in row and float(row['aLose']) == 1.0)
-                    
-                    is_match_played = a_win_played or a_draw_played or a_lose_played
-
-                    # 3. ご指示通り、結果と一致する部分だけ1.0、それ以外は0.25のアルファ値を設定
-                    # 試合前ならすべて1.0（鮮やか）
-                    if not is_match_played:
-                        alpha_win, alpha_draw, alpha_lose = 1.0, 1.0, 1.0
-                    else:
-                        alpha_win  = 1.0 if a_win_played else 1.0
-                        alpha_draw = 1.0 if a_draw_played else 1.0
-                        alpha_lose = 1.0 if a_lose_played else 1.0
-
                     fig_h2h = go.Figure()
-                    
-                    # 4. markerのcolorに rgba() を使って透明度を直接注入
                     fig_h2h.add_trace(go.Bar(
-                        x=[float(row['pWin'])], y=[""], orientation='h',
-                        marker=dict(color=f"rgba({rgb_win}, {alpha_win})"),
-                        text=f"<b>{'★ ' if a_win_played else ''}{float(row['pWin'])*100:.1f}%</b>" if float(row['pWin']) > 0.05 else "",
-                        textposition="inside", textfont=dict(size=20),
+                        x=[row['pWin']], y=["Match"],
+                        orientation='h',
+                        marker=dict(color='#2222EE'),
+                        text=f"{row['CodeA']} {row['pWin']:.1%}",
+                        textposition='inside',
+                        insidetextanchor='middle',
+                        textfont=dict(size=20),
                         hoverinfo="skip",
                         name=f"{row['CodeA']} 勝"
                     ))
                     fig_h2h.add_trace(go.Bar(
-                        x=[float(row['pDraw'])], y=[""], orientation='h',
-                        marker=dict(color=f"rgba({rgb_draw}, {alpha_draw})"),
-                        text=f"<b>{'★ ' if a_draw_played else ''}{float(row['pDraw'])*100:.1f}%</b>" if float(row['pDraw']) > 0.05 else "",
-                        textposition="inside", textfont=dict(size=20),
+                        x=[row['pDraw']], y=["Match"],
+                        orientation='h',
+                        marker=dict(color='#BDBDBD'),
+                        text=f"Draw {row['pDraw']:.1%}",
+                        textposition='inside',
+                        insidetextanchor='middle',
+                        textfont=dict(size=20),
                         hoverinfo="skip",
-                        name="引き分け"
+                        name="引分"
                     ))
                     fig_h2h.add_trace(go.Bar(
-                        x=[float(row['pLose'])], y=[""], orientation='h',
-                        marker=dict(color=f"rgba({rgb_lose}, {alpha_lose})"),
-                        text=f"<b>{'★ ' if a_lose_played else ''}{float(row['pLose'])*100:.1f}%</b>" if float(row['pLose']) > 0.05 else "",
-                        textposition="inside", textfont=dict(size=20),
+                        x=[row['pLose']], y=["Match"],
+                        orientation='h',
+                        marker=dict(color='#C62828'),
+                        text=f"{row['CodeB']} {row['pLose']:.1%}",
+                        textposition='inside',
+                        insidetextanchor='middle',
+                        textfont=dict(size=20),
                         hoverinfo="skip",
                         name=f"{row['CodeB']} 勝"
                     ))
