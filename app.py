@@ -371,17 +371,17 @@ if df is not None:
                     st.write(f"**{row['Date']} {row['TeamA']} vs {row['TeamB']}**")
                     
                     # === [修正後] 373行目からの置き換え用コード ===
-                    # 1. 各項目の結果フラグを整数型（0または1）として判定
-                    a_win  = int(row['aWin'])  if 'aWin' in row  else 0
-                    a_draw = int(row['aDraw']) if 'aDraw' in row else 0
-                    a_lose = int(row['aLose']) if 'aLose' in row else 0
+                    # 1. 各項目の結果フラグを安全に浮動小数点数（float）として取得
+                    a_win  = float(row['aWin'])  if 'aWin' in row  else 0.0
+                    a_draw = float(row['aDraw']) if 'aDraw' in row else 0.0
+                    a_lose = float(row['aLose']) if 'aLose' in row else 0.0
 
                     fig_h2h = go.Figure()
                     
-                    # 2. 結果と一致（=1）するセグメントのテキストの先頭に ★ を付与して強調
-                    text_win  = f"★ {row['CodeA']} {row['pWin']:.1%}" if a_win == 1  else f"{row['CodeA']} {row['pWin']:.1%}"
-                    text_draw = f"★ Draw {row['pDraw']:.1%}"        if a_draw == 1 else f"Draw {row['pDraw']:.1%}"
-                    text_lose = f"★ {row['CodeB']} {row['pLose']:.1%}" if a_lose == 1 else f"{row['CodeB']} {row['pLose']:.1%}"
+                    # 2. 結果が 1.0 であるセグメントのテキストの先頭にのみ ★ を付与
+                    text_win  = f"★ {row['CodeA']} {row['pWin']:.1%}" if a_win == 1.0  else f"{row['CodeA']} {row['pWin']:.1%}"
+                    text_draw = f"★ Draw {row['pDraw']:.1%}"        if a_draw == 1.0 else f"Draw {row['pDraw']:.1%}"
+                    text_lose = f"★ {row['CodeB']} {row['pLose']:.1%}" if a_lose == 1.0 else f"{row['CodeB']} {row['pLose']:.1%}"
 
                     # 3. 帯グラフの描画（オリジナル設定・カラーを100%完全維持）
                     fig_h2h.add_trace(go.Bar(
