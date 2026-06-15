@@ -371,20 +371,19 @@ if df is not None:
                     st.write(f"**{row['Date']} {row['TeamA']} vs {row['TeamB']}**")
                     
                     # === [修正後] 373行目からの置き換え用コード ===
-                    # 1. 各項目の結果フラグを安全に取得（欠損値NaNや表記揺れを回避）
+                    # 1. 各項目の結果フラグを安全に取得（欠損値NaNを回避）
                     a_win  = float(row['aWin']) if 'aWin' in row and not pd.isna(row['aWin']) else 0.0
                     a_draw = float(row['aDraw']) if 'aDraw' in row and not pd.isna(row['aDraw']) else 0.0
                     a_lose = float(row['aLose']) if 'aLose' in row and not pd.isna(row['aLose']) else 0.0
 
                     # 2. 実際の結果（1.0）の部分だけ枠線を太く(4)し、それ以外は枠線なし(0)にする
-                    # ※透明度(opacity)の調整は一切行わず、元の鮮やかな発色を100%維持します。
                     lw_win  = 4 if a_win == 1.0 else 0
                     lw_draw = 4 if a_draw == 1.0 else 0
                     lw_lose = 4 if a_lose == 1.0 else 0
 
                     fig_h2h = go.Figure()
                     
-                    # 3. 各帯グラフの描画（colorは元の鮮やかなHEXコード固定、line属性のみで枠線を制御）
+                    # 3. 帯グラフの描画（colorは元のHEXコードに完全固定、line属性のみで枠線を制御）
                     fig_h2h.add_trace(go.Bar(
                         x=[float(row['pWin'])], y=[""], orientation='h',
                         marker=dict(color='#2A6F97', line=dict(color='#000000', width=lw_win)),
