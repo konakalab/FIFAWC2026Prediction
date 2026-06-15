@@ -297,7 +297,7 @@ if df is not None:
     st.divider()
 
     # --- 2. 各グループのタブ構成 ---
-    file_h2h = 'table_prediction_h2h.csv'
+    file_h2h = 'table_prediction_h2h_withResult.csv'
     df_h2h = None
     if os.path.exists(file_h2h):
         df_h2h = pd.read_csv(file_h2h)
