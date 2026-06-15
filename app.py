@@ -370,41 +370,37 @@ if df is not None:
                 for idx, row in group_matches.iterrows():
                     st.write(f"**{row['Date']} {row['TeamA']} vs {row['TeamB']}**")
                     
-                    # === [修正後] 373行目からの置き換え用コード ===
-                    # 1. 各項目の結果フラグを安全に取得（欠損値NaNを回避）
-                    a_win  = float(row['aWin']) if 'aWin' in row and not pd.isna(row['aWin']) else 0.0
-                    a_draw = float(row['aDraw']) if 'aDraw' in row and not pd.isna(row['aDraw']) else 0.0
-                    a_lose = float(row['aLose']) if 'aLose' in row and not pd.isna(row['aLose']) else 0.0
-
-                    # 2. 実際の結果（1.0）の部分だけ枠線を太く(4)し、それ以外は枠線なし(0)にする
-                    lw_win  = 4 if a_win == 1.0 else 0
-                    lw_draw = 4 if a_draw == 1.0 else 0
-                    lw_lose = 4 if a_lose == 1.0 else 0
-
                     fig_h2h = go.Figure()
-                    
-                    # 3. 帯グラフの描画（colorは元のHEXコードに完全固定、line属性のみで枠線を制御）
                     fig_h2h.add_trace(go.Bar(
-                        x=[float(row['pWin'])], y=[""], orientation='h',
-                        marker=dict(color='#2A6F97', line=dict(color='#000000', width=lw_win)),
-                        text=f"<b>{'★ ' if a_win==1.0 else ''}{float(row['pWin'])*100:.1f}%</b>" if float(row['pWin']) > 0.05 else "",
-                        textposition="inside", textfont=dict(size=20),
+                        x=[row['pWin']], y=["Match"],
+                        orientation='h',
+                        marker=dict(color='#2222EE'),
+                        text=f"{row['CodeA']} {row['pWin']:.1%}",
+                        textposition='inside',
+                        insidetextanchor='middle',
+                        textfont=dict(size=20),
                         hoverinfo="skip",
                         name=f"{row['CodeA']} 勝"
                     ))
                     fig_h2h.add_trace(go.Bar(
-                        x=[float(row['pDraw'])], y=[""], orientation='h',
-                        marker=dict(color='#A8A8A8', line=dict(color='#000000', width=lw_draw)),
-                        text=f"<b>{'★ ' if a_draw==1.0 else ''}{float(row['pDraw'])*100:.1f}%</b>" if float(row['pDraw']) > 0.05 else "",
-                        textposition="inside", textfont=dict(size=20),
+                        x=[row['pDraw']], y=["Match"],
+                        orientation='h',
+                        marker=dict(color='#BDBDBD'),
+                        text=f"Draw {row['pDraw']:.1%}",
+                        textposition='inside',
+                        insidetextanchor='middle',
+                        textfont=dict(size=20),
                         hoverinfo="skip",
-                        name="引き分け"
+                        name="引分"
                     ))
                     fig_h2h.add_trace(go.Bar(
-                        x=[float(row['pLose'])], y=[""], orientation='h',
-                        marker=dict(color='#A13D63', line=dict(color='#000000', width=lw_lose)),
-                        text=f"<b>{'★ ' if a_lose==1.0 else ''}{float(row['pLose'])*100:.1f}%</b>" if float(row['pLose']) > 0.05 else "",
-                        textposition="inside", textfont=dict(size=20),
+                        x=[row['pLose']], y=["Match"],
+                        orientation='h',
+                        marker=dict(color='#C62828'),
+                        text=f"{row['CodeB']} {row['pLose']:.1%}",
+                        textposition='inside',
+                        insidetextanchor='middle',
+                        textfont=dict(size=20),
                         hoverinfo="skip",
                         name=f"{row['CodeB']} 勝"
                     ))
