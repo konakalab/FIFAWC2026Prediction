@@ -371,16 +371,24 @@ if df is not None:
                     st.write(f"**{row['Date']} {row['TeamA']} vs {row['TeamB']}**")
                     
                     # === [修正後] 373行目からの置き換え用コード ===
-                    # 実際の結果フラグを安全に取得 (1 または 1.0 に対応)
-                    a_win_played = str(row.get('aWin', '0')).strip().startswith('1')
-                    a_draw_played = str(row.get('aDraw', '0')).strip().startswith('1')
-                    a_lose_played = str(row.get('aLose', '0')).strip().startswith('1')
+                    # 1. Pandasの欠損値(NaN)や数値型を100%安全にフラグ判定する処理
+                    def is_result_one(val):
+                        if pd.isna(val): # セルが空欄(NaN)の場合は確実に対象外
+                            return False
+                        try:
+                            return float(val) == 1.0 # 1 または 1.0 であれば True
+                        except:
+                            return False
+
+                    a_win_played = is_result_one(row.get('aWin'))
+                    a_draw_played = is_result_one(row.get('aDraw'))
+                    a_lose_played = is_result_one(row.get('aLose'))
                     
-                    # 実際に試合が行われたか（いずれかの結果フラグが1になっているか）
+                    # 2. 実際に試合が行われたか（いずれかの結果フラグが1になっているか）
                     is_match_played = a_win_played or a_draw_played or a_lose_played
 
-                    # 各項目（Win, Draw, Lose）の透明度をご指示通りに個別決定
-                    # 試合前ならすべて1.0、試合後なら「実際の結果と一致する部分だけ1.0、それ以外は0.25」
+                    # 3. 各項目（Win, Draw, Lose）の透明度をご指示通りに個別決定
+                    # 試合前ならすべて1.0（鮮やか）、試合後は「結果と一致する部分だけ1.0、それ以外は0.25」
                     if not is_match_played:
                         op_win, op_draw, op_lose = 1.0, 1.0, 1.0
                     else:
@@ -390,7 +398,7 @@ if df is not None:
 
                     fig_h2h = go.Figure()
                     
-                    # 各帯の marker=dict(..., opacity=...) にそれぞれの透明度を適用します
+                    # 各帯の marker=dict(..., opacity=...) にそれぞれの透明度を適用
                     fig_h2h.add_trace(go.Bar(
                         x=[float(row['pWin'])], y=[""], orientation='h',
                         marker=dict(color='#2A6F97', opacity=op_win),
