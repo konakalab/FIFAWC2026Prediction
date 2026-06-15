@@ -388,7 +388,7 @@ if df is not None:
                     if not is_match_played:
                         alpha_win, alpha_draw, alpha_lose = 1.0, 1.0, 1.0
                     else:
-                        alpha_win  = 1.0 if a_win_played else 0.25
+                        alpha_win  = 1.0 if a_win_played else 1.0
                         alpha_draw = 1.0 if a_draw_played else 0.25
                         alpha_lose = 1.0 if a_lose_played else 0.25
 
