@@ -370,19 +370,23 @@ if df is not None:
                 for idx, row in group_matches.iterrows():
                     st.write(f"**{row['Date']} {row['TeamA']} vs {row['TeamB']}**")
                     
-                    # === [修正後] 373行目からの置き換え用コード ===
-                    # pd（Pandas）を一切使わず、0または1の数値型として安全に直接判定
-                    a_win  = float(row['aWin'])  if 'aWin' in row  else 0.0
-                    a_draw = float(row['aDraw']) if 'aDraw' in row else 0.0
-                    a_lose = float(row['aLose']) if 'aLose' in row else 0.0
+                    # 1. 結果フラグを安全に取得
+                    a_win  = int(row['aWin'])  if 'aWin' in row  else 0
+                    a_draw = int(row['aDraw']) if 'aDraw' in row else 0
+                    a_lose = int(row['aLose']) if 'aLose' in row else 0
+
+                    # 2. 結果（1）のセグメントだけ、枠線を太さ 4（ゴールド等）に設定し、他は 0（枠なし）にする
+                    # カラーは既存のテーマに合わせて調整可能です（例: 白 '#FFFFFF' や 黄色 '#FFD700' など）
+                    line_win  = dict(color='#FFFFFF', width=4) if a_win == 1  else dict(width=0)
+                    line_draw = dict(color='#FFFFFF', width=4) if a_draw == 1 else dict(width=0)
+                    line_lose = dict(color='#FFFFFF', width=4) if a_lose == 1 else dict(width=0)
 
                     fig_h2h = go.Figure()
                     
-                    # 元の鮮やかなカラーとテキスト表記に完全復元
                     fig_h2h.add_trace(go.Bar(
                         x=[row['pWin']], y=["Match"],
                         orientation='h',
-                        marker=dict(color='#2222EE'),
+                        marker=dict(color='#2222EE', line=line_win), # 👈 lineを適用
                         text=f"{row['CodeA']} {row['pWin']:.1%}",
                         textposition='inside',
                         insidetextanchor='middle',
@@ -393,7 +397,7 @@ if df is not None:
                     fig_h2h.add_trace(go.Bar(
                         x=[row['pDraw']], y=["Match"],
                         orientation='h',
-                        marker=dict(color='#BDBDBD'),
+                        marker=dict(color='#BDBDBD', line=line_draw), # 👈 lineを適用
                         text=f"Draw {row['pDraw']:.1%}",
                         textposition='inside',
                         insidetextanchor='middle',
@@ -404,7 +408,7 @@ if df is not None:
                     fig_h2h.add_trace(go.Bar(
                         x=[row['pLose']], y=["Match"],
                         orientation='h',
-                        marker=dict(color='#C62828'),
+                        marker=dict(color='#C62828', line=line_lose), # 👈 lineを適用
                         text=f"{row['CodeB']} {row['pLose']:.1%}",
                         textposition='inside',
                         insidetextanchor='middle',
@@ -412,29 +416,6 @@ if df is not None:
                         hoverinfo="skip",
                         name=f"{row['CodeB']} 勝"
                     ))
-
-                    fig_h2h.update_layout(
-                        barmode='stack',
-                        height=90,
-                        margin=dict(l=70, r=70, t=00, b=0),
-                        showlegend=False,
-                        xaxis=dict(showticklabels=False, range=[0, 1], fixedrange=True),
-                        yaxis=dict(showticklabels=False, fixedrange=True),
-                        paper_bgcolor='rgba(0,0,0,0)',
-                        plot_bgcolor='rgba(0,0,0,0)',
-                        annotations=[
-                            dict(
-                                x=0, y=0.5, xref="x", yref="paper",
-                                text=f"<b>{row['CodeA']}</b>", showarrow=False,
-                                xanchor="right", xshift=-10, font=dict(size=20)
-                            ),
-                            dict(
-                                x=1, y=0.5, xref="x", yref="paper",
-                                text=f"<b>{row['CodeB']}</b>", showarrow=False,
-                                xanchor="left", xshift=10, font=dict(size=20)
-                            ),
-                        ]
-                    )
                     st.plotly_chart(fig_h2h, width='stretch', key=f"h2h_{group_name}_{idx}")
             else:
                 st.write("H2Hデータがありません。")
