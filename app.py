@@ -78,7 +78,7 @@ if df is not None:
 
         st.dataframe(
             styled_overall,
-            use_container_width=True,
+            width='stretch',
             column_config={
                 "Team": "チーム名",
                 "Code": "コード",
@@ -215,7 +215,7 @@ if df is not None:
             )
             
             # 比率グラフの描画
-            st.plotly_chart(fig_perf_pct, use_container_width=True, key="overall_performance_pct")
+            st.plotly_chart(fig_perf_pct, width='stretch', key="overall_performance_pct")
             
             # ─────────────────────────────────────────────────────────
             # 既存: 件数（実数カウント）棒グラフ
@@ -241,7 +241,7 @@ if df is not None:
             fig_perf.update_traces(marker=dict(line=dict(color='#777777', width=1)))
             
             # 件数グラフの描画
-            st.plotly_chart(fig_perf, use_container_width=True, key="overall_performance_count")
+            st.plotly_chart(fig_perf, width='stretch', key="overall_performance_count")
     # =========================================================================
     # 
     # =========================================================================
@@ -279,7 +279,7 @@ if df is not None:
         
     st.dataframe(
         styled_df,
-        use_container_width=True,
+        width='stretch',
         column_config={
             "Team": "チーム名",
             "Code": "コード",
@@ -358,7 +358,7 @@ if df is not None:
                 xaxis=dict(tickfont=dict(size=20)),
                 yaxis=dict(autorange="reversed", tickfont=dict(size=22))
             )
-            st.plotly_chart(fig_rank, use_container_width=True, key=f"rank_{group_name}")
+            st.plotly_chart(fig_rank, width='stretch', key=f"rank_{group_name}")
 
             st.divider()
 
@@ -435,7 +435,7 @@ if df is not None:
                             ),
                         ]
                     )
-                    st.plotly_chart(fig_h2h, use_container_width=True, key=f"h2h_{group_name}_{idx}")
+                    st.plotly_chart(fig_h2h, width='stretch', key=f"h2h_{group_name}_{idx}")
             else:
                 st.write("H2Hデータがありません。")
 
