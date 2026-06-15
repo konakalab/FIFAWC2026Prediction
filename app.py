@@ -371,25 +371,18 @@ if df is not None:
                     st.write(f"**{row['Date']} {row['TeamA']} vs {row['TeamB']}**")
                     
                     # === [修正後] 373行目からの置き換え用コード ===
-                    # 1. 各項目の結果フラグを安全に取得（欠損値NaNを回避）
-                    a_win  = float(row['aWin']) if 'aWin' in row and not pd.isna(row['aWin']) else 0.0
-                    a_draw = float(row['aDraw']) if 'aDraw' in row and not pd.isna(row['aDraw']) else 0.0
-                    a_lose = float(row['aLose']) if 'aLose' in row and not pd.isna(row['aLose']) else 0.0
+                    # pd（Pandas）を一切使わず、0または1の数値型として安全に直接判定
+                    a_win  = float(row['aWin'])  if 'aWin' in row  else 0.0
+                    a_draw = float(row['aDraw']) if 'aDraw' in row else 0.0
+                    a_lose = float(row['aLose']) if 'aLose' in row else 0.0
 
-                    # 2. 実際の勝敗結果（1.0）の部分だけ枠線を太く(4)し、それ以外は枠線なし(0)にする
-                    lw_win  = 4 if a_win == 1.0 else 0
-                    lw_draw = 4 if a_draw == 1.0 else 0
-                    lw_lose = 4 if a_lose == 1.0 else 0
-
-                    print(lw_win)
-                    
                     fig_h2h = go.Figure()
                     
-                    # 3. 帯グラフの描画（colorとテキスト表記は元のソースコードを100%維持し、line属性のみを追加）
+                    # 元の鮮やかなカラーとテキスト表記に完全復元
                     fig_h2h.add_trace(go.Bar(
                         x=[row['pWin']], y=["Match"],
                         orientation='h',
-                        marker=dict(color='#2222EE', line=dict(color='#000000', width=lw_win)),
+                        marker=dict(color='#2222EE'),
                         text=f"{row['CodeA']} {row['pWin']:.1%}",
                         textposition='inside',
                         insidetextanchor='middle',
@@ -400,7 +393,7 @@ if df is not None:
                     fig_h2h.add_trace(go.Bar(
                         x=[row['pDraw']], y=["Match"],
                         orientation='h',
-                        marker=dict(color='#BDBDBD', line=dict(color='#000000', width=lw_draw)),
+                        marker=dict(color='#BDBDBD'),
                         text=f"Draw {row['pDraw']:.1%}",
                         textposition='inside',
                         insidetextanchor='middle',
@@ -411,7 +404,7 @@ if df is not None:
                     fig_h2h.add_trace(go.Bar(
                         x=[row['pLose']], y=["Match"],
                         orientation='h',
-                        marker=dict(color='#C62828', line=dict(color='#000000', width=lw_lose)),
+                        marker=dict(color='#C62828'),
                         text=f"{row['CodeB']} {row['pLose']:.1%}",
                         textposition='inside',
                         insidetextanchor='middle',
