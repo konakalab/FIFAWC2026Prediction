@@ -381,13 +381,15 @@ if df is not None:
                     lw_draw = 4 if a_draw == 1.0 else 0
                     lw_lose = 4 if a_lose == 1.0 else 0
 
+                    print(lw_win)
+                    
                     fig_h2h = go.Figure()
                     
                     # 3. 帯グラフの描画（colorとテキスト表記は元のソースコードを100%維持し、line属性のみを追加）
                     fig_h2h.add_trace(go.Bar(
                         x=[row['pWin']], y=["Match"],
                         orientation='h',
-                        marker=dict(color='#2222EE', line=dict(color='#000000', width=5)),
+                        marker=dict(color='#2222EE', line=dict(color='#000000', width=lw_win)),
                         text=f"{row['CodeA']} {row['pWin']:.1%}",
                         textposition='inside',
                         insidetextanchor='middle',
