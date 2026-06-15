@@ -371,19 +371,24 @@ if df is not None:
                     st.write(f"**{row['Date']} {row['TeamA']} vs {row['TeamB']}**")
                     
                     # === [修正後] 373行目からの置き換え用コード ===
-                    # pd（Pandas）を一切使わず、0または1の数値型として安全に直接判定
+                    # 1. 各項目の結果フラグを安全に取得（0または1の数値型として直接判定）
                     a_win  = float(row['aWin'])  if 'aWin' in row  else 0.0
                     a_draw = float(row['aDraw']) if 'aDraw' in row else 0.0
                     a_lose = float(row['aLose']) if 'aLose' in row else 0.0
 
                     fig_h2h = go.Figure()
                     
-                    # 元の鮮やかなカラーとテキスト表記に完全復元
+                    # 2. 実際の結果（1.0）と一致する部分のテキストのみ <b> </b> を付与して太字にする
+                    text_win  = f"<b>{row['CodeA']} {row['pWin']:.1%}</b>" if a_win == 1.0 else f"{row['CodeA']} {row['pWin']:.1%}"
+                    text_draw = f"<b>Draw {row['pDraw']:.1%}</b>"        if a_draw == 1.0 else f"Draw {row['pDraw']:.1%}"
+                    text_lose = f"<b>{row['CodeB']} {row['pLose']:.1%}</b>" if a_lose == 1.0 else f"{row['CodeB']} {row['pLose']:.1%}"
+
+                    # 3. 帯グラフの描画（オリジナルカラーを100%維持し、動的に判定したテキストを適用）
                     fig_h2h.add_trace(go.Bar(
                         x=[row['pWin']], y=["Match"],
                         orientation='h',
                         marker=dict(color='#2222EE'),
-                        text=f"{row['CodeA']} {row['pWin']:.1%}",
+                        text=text_win,
                         textposition='inside',
                         insidetextanchor='middle',
                         textfont=dict(size=20),
@@ -394,7 +399,7 @@ if df is not None:
                         x=[row['pDraw']], y=["Match"],
                         orientation='h',
                         marker=dict(color='#BDBDBD'),
-                        text=f"Draw {row['pDraw']:.1%}",
+                        text=text_draw,
                         textposition='inside',
                         insidetextanchor='middle',
                         textfont=dict(size=20),
@@ -405,7 +410,7 @@ if df is not None:
                         x=[row['pLose']], y=["Match"],
                         orientation='h',
                         marker=dict(color='#C62828'),
-                        text=f"{row['CodeB']} {row['pLose']:.1%}",
+                        text=text_lose,
                         textposition='inside',
                         insidetextanchor='middle',
                         textfont=dict(size=20),
