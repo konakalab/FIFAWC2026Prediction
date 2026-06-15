@@ -368,10 +368,12 @@ if df is not None:
                 group_matches = df_h2h[df_h2h['Group'] == group_name]
                 
                 for idx, row in group_matches.iterrows():
-                    st.write(f"**{row['Date']} {row['TeamA']} vs {row['TeamB']}**")
-                    
-                    # ── 修正点：結果が実際に記録されているか（GoalsA が NaN でないか）を先にチェック ──
+                    # ① まず has_result を定義
                     has_result = 'GoalsA' in row.index and pd.notna(row['GoalsA'])
+    
+                    # ② スコアを含むタイトルを表示
+                    score_str = f" {int(row['GoalsA'])}-{int(row['GoalsB'])}" if has_result else ""
+                    st.write(f"**{row['Date']} {row['TeamA']} vs {row['TeamB']}{score_str}**")
 
                     if has_result:
                         a_win  = float(row['aWin'])  if ('aWin'  in row.index and pd.notna(row['aWin']))  else 0.0
