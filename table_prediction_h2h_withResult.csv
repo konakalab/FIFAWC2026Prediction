@@ -23,14 +23,14 @@ Date,TeamA,TeamB,Group,GoalsA,GoalsB,matchURL,CodeA,CodeB,pWin,pDraw,pLose,aWin,
 2026/6/17,Uzbekistan,Colombia,K,1,3,,UZB,COL,0.083,0.193,0.724,0,0,1
 2026/6/17,England,Croatia,L,4,2,,ENG,CRO,0.47,0.318,0.212,1,0,0
 2026/6/17,Ghana,Panama,L,1,0,,GHA,PAN,0.258,0.335,0.407,1,0,0
-2026/6/18,Switzerland,Bosnia and Herzegovina,B,,,,SUI,BIH,0.748,0.177,0.074,0,0,0
-2026/6/18,Mexico,South Korea,A,,,,MEX,KOR,0.527,0.297,0.177,0,0,0
-2026/6/18,Czech Republic,South Africa,A,,,,CZE,RSA,0.479,0.315,0.206,0,0,0
-2026/6/18,Canada,Qatar,B,,,,CAN,QAT,0.789,0.151,0.06,0,0,0
-2026/6/19,United States,Australia,D,,,,USA,AUS,0.366,0.342,0.293,0,0,0
-2026/6/19,Brazil,Haiti,C,,,,BRA,HAI,0.853,0.107,0.039,0,0,0
-2026/6/19,Turkey,Paraguay,D,,,,TUR,PAR,0.319,0.343,0.338,0,0,0
-2026/6/19,Scotland,Morocco,C,,,,SCO,MAR,0.183,0.301,0.517,0,0,0
+2026/6/18,Switzerland,Bosnia and Herzegovina,B,4,1,,SUI,BIH,0.748,0.177,0.074,0,0,0
+2026/6/18,Mexico,South Korea,A,1,0,,MEX,KOR,0.527,0.297,0.177,0,0,0
+2026/6/18,Czech Republic,South Africa,A,1,1,,CZE,RSA,0.479,0.315,0.206,0,0,0
+2026/6/18,Canada,Qatar,B,6,0,,CAN,QAT,0.789,0.151,0.06,0,0,0
+2026/6/19,United States,Australia,D,2,0,,USA,AUS,0.366,0.342,0.293,0,0,0
+2026/6/19,Brazil,Haiti,C,3,0,,BRA,HAI,0.853,0.107,0.039,0,0,0
+2026/6/19,Turkey,Paraguay,D,0,1,,TUR,PAR,0.319,0.343,0.338,0,0,0
+2026/6/19,Scotland,Morocco,C,0,1,,SCO,MAR,0.183,0.301,0.517,0,0,0
 2026/6/20,Ecuador,Curaçao,E,,,,ECU,CUW,0.911,0.066,0.023,0,0,0
 2026/6/20,Germany,Ivory Coast,E,,,,GER,CIV,0.585,0.27,0.145,0,0,0
 2026/6/20,Netherlands,Sweden,F,,,,NED,SWE,0.676,0.221,0.103,0,0,0
