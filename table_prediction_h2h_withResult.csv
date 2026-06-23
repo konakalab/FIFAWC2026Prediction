@@ -31,18 +31,18 @@ Date,TeamA,TeamB,Group,GoalsA,GoalsB,matchURL,CodeA,CodeB,pWin,pDraw,pLose,aWin,
 2026/6/19,Brazil,Haiti,C,3,0,,BRA,HAI,0.853,0.107,0.039,1,0,0
 2026/6/19,Turkey,Paraguay,D,0,1,,TUR,PAR,0.319,0.343,0.338,0,0,1
 2026/6/19,Scotland,Morocco,C,0,1,,SCO,MAR,0.183,0.301,0.517,0,0,1
-2026/6/20,Ecuador,Curaçao,E,,,,ECU,CUW,0.911,0.066,0.023,0,0,0
-2026/6/20,Germany,Ivory Coast,E,,,,GER,CIV,0.585,0.27,0.145,0,0,0
-2026/6/20,Netherlands,Sweden,F,,,,NED,SWE,0.676,0.221,0.103,0,0,0
-2026/6/20,Tunisia,Japan,F,,,,TUN,JPN,0.108,0.229,0.663,0,0,0
-2026/6/21,Belgium,Iran,G,,,,BEL,IRN,0.428,0.33,0.242,0,0,0
-2026/6/21,New Zealand,Egypt,G,,,,NZL,EGY,0.164,0.287,0.55,0,0,0
-2026/6/21,Spain,Saudi Arabia,H,,,,ESP,KSA,0.91,0.067,0.023,0,0,0
-2026/6/21,Uruguay,Cape Verde,H,,,,URU,CPV,0.707,0.203,0.09,0,0,0
-2026/6/22,Norway,Senegal,I,,,,NOR,SEN,0.333,0.344,0.323,0,0,0
-2026/6/22,France,Iraq,I,,,,FRA,IRQ,0.841,0.116,0.043,0,0,0
-2026/6/22,Argentina,Austria,J,,,,ARG,AUT,0.627,0.249,0.125,0,0,0
-2026/6/22,Jordan,Algeria,J,,,,JOR,ALG,0.164,0.287,0.549,0,0,0
+2026/6/20,Ecuador,Curaçao,E,0,0,,ECU,CUW,0.911,0.066,0.023,0,1,0
+2026/6/20,Germany,Ivory Coast,E,2,1,,GER,CIV,0.585,0.27,0.145,1,0,0
+2026/6/20,Netherlands,Sweden,F,5,1,,NED,SWE,0.676,0.221,0.103,1,0,0
+2026/6/20,Tunisia,Japan,F,0,4,,TUN,JPN,0.108,0.229,0.663,0,0,1
+2026/6/21,Belgium,Iran,G,0,0,,BEL,IRN,0.428,0.33,0.242,0,1,0
+2026/6/21,New Zealand,Egypt,G,1,3,,NZL,EGY,0.164,0.287,0.55,0,0,1
+2026/6/21,Spain,Saudi Arabia,H,4,0,,ESP,KSA,0.91,0.067,0.023,1,0,0
+2026/6/21,Uruguay,Cape Verde,H,2,2,,URU,CPV,0.707,0.203,0.09,0,1,0
+2026/6/22,Norway,Senegal,I,3,2,,NOR,SEN,0.333,0.344,0.323,1,0,0
+2026/6/22,France,Iraq,I,3,0,,FRA,IRQ,0.841,0.116,0.043,1,0,0
+2026/6/22,Argentina,Austria,J,2,0,,ARG,AUT,0.627,0.249,0.125,1,0,0
+2026/6/22,Jordan,Algeria,J,1,2,,JOR,ALG,0.164,0.287,0.549,0,0,1
 2026/6/23,Colombia,DR Congo,K,,,,COL,COD,0.717,0.197,0.086,0,0,0
 2026/6/23,Panama,Croatia,L,,,,PAN,CRO,0.107,0.227,0.666,0,0,0
 2026/6/23,England,Ghana,L,,,,ENG,GHA,0.835,0.12,0.045,0,0,0
