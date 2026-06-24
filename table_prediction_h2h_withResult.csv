@@ -43,10 +43,10 @@ Date,TeamA,TeamB,Group,GoalsA,GoalsB,matchURL,CodeA,CodeB,pWin,pDraw,pLose,aWin,
 2026/6/22,France,Iraq,I,3,0,,FRA,IRQ,0.841,0.116,0.043,1,0,0
 2026/6/22,Argentina,Austria,J,2,0,,ARG,AUT,0.627,0.249,0.125,1,0,0
 2026/6/22,Jordan,Algeria,J,1,2,,JOR,ALG,0.164,0.287,0.549,0,0,1
-2026/6/23,Colombia,DR Congo,K,,,,COL,COD,0.717,0.197,0.086,0,0,0
-2026/6/23,Panama,Croatia,L,,,,PAN,CRO,0.107,0.227,0.666,0,0,0
-2026/6/23,England,Ghana,L,,,,ENG,GHA,0.835,0.12,0.045,0,0,0
-2026/6/23,Portugal,Uzbekistan,K,,,,POR,UZB,0.644,0.239,0.116,0,0,0
+2026/6/23,Colombia,DR Congo,K,1,0,,COL,COD,0.717,0.197,0.086,1,0,0
+2026/6/23,Panama,Croatia,L,0,1,,PAN,CRO,0.107,0.227,0.666,0,0,1
+2026/6/23,England,Ghana,L,0,0,,ENG,GHA,0.835,0.12,0.045,0,1,0
+2026/6/23,Portugal,Uzbekistan,K,5,0,,POR,UZB,0.644,0.239,0.116,1,0,0
 2026/6/24,Switzerland,Canada,B,,,,SUI,CAN,0.344,0.343,0.313,0,0,0
 2026/6/24,Scotland,Brazil,C,,,,SCO,BRA,0.14,0.265,0.595,0,0,0
 2026/6/24,Bosnia and Herzegovina,Qatar,B,,,,BIH,QAT,0.398,0.337,0.265,0,0,0
