@@ -47,12 +47,12 @@ Date,TeamA,TeamB,Group,GoalsA,GoalsB,matchURL,CodeA,CodeB,pWin,pDraw,pLose,aWin,
 2026/6/23,Panama,Croatia,L,0,1,,PAN,CRO,0.107,0.227,0.666,0,0,1
 2026/6/23,England,Ghana,L,0,0,,ENG,GHA,0.835,0.12,0.045,0,1,0
 2026/6/23,Portugal,Uzbekistan,K,5,0,,POR,UZB,0.644,0.239,0.116,1,0,0
-2026/6/24,Switzerland,Canada,B,,,,SUI,CAN,0.344,0.343,0.313,0,0,0
-2026/6/24,Scotland,Brazil,C,,,,SCO,BRA,0.14,0.265,0.595,0,0,0
-2026/6/24,Bosnia and Herzegovina,Qatar,B,,,,BIH,QAT,0.398,0.337,0.265,0,0,0
-2026/6/24,Morocco,Haiti,C,,,,MAR,HAI,0.809,0.138,0.053,0,0,0
-2026/6/24,South Africa,South Korea,A,,,,RSA,KOR,0.177,0.297,0.526,0,0,0
-2026/6/24,Czech Republic,Mexico,A,,,,CZE,MEX,0.151,0.276,0.573,0,0,0
+2026/6/24,Switzerland,Canada,B,2,1,,SUI,CAN,0.344,0.343,0.313,1,0,0
+2026/6/24,Scotland,Brazil,C,0,3,,SCO,BRA,0.14,0.265,0.595,0,0,1
+2026/6/24,Bosnia and Herzegovina,Qatar,B,3,1,,BIH,QAT,0.398,0.337,0.265,1,0,0
+2026/6/24,Morocco,Haiti,C,4,2,,MAR,HAI,0.809,0.138,0.053,1,0,0
+2026/6/24,South Africa,South Korea,A,1,0,,RSA,KOR,0.177,0.297,0.526,1,0,0
+2026/6/24,Czech Republic,Mexico,A,0,3,,CZE,MEX,0.151,0.276,0.573,0,0,1
 2026/6/25,Japan,Sweden,F,,,,JPN,SWE,0.635,0.244,0.121,0,0,0
 2026/6/25,Tunisia,Netherlands,F,,,,TUN,NED,0.092,0.206,0.702,0,0,0
 2026/6/25,Turkey,United States,D,,,,TUR,USA,0.281,0.34,0.379,0,0,0
