@@ -56,7 +56,7 @@ Date,TeamA,TeamB,Group,GoalsA,GoalsB,matchURL,CodeA,CodeB,pWin,pDraw,pLose,aWin,
 2026/6/25,Japan,Sweden,F,1,1,,JPN,SWE,0.635,0.244,0.121,0,1,0
 2026/6/25,Tunisia,Netherlands,F,1,3,,TUN,NED,0.092,0.206,0.702,0,0,1
 2026/6/25,Turkey,United States,D,3,2,,TUR,USA,0.281,0.34,0.379,1,0,0
-2026/6/25,Paraguay,Australia,D,0,0,,PAR,AUS,0.325,0.344,0.332,0,0,0
+2026/6/25,Paraguay,Australia,D,0,0,,PAR,AUS,0.325,0.344,0.332,0,1,0
 2026/6/25,Ecuador,Germany,E,2,1,,ECU,GER,0.319,0.343,0.338,1,0,0
 2026/6/25,Curaçao,Ivory Coast,E,0,2,,CUW,CIV,0.06,0.151,0.788,0,0,1
 2026/6/26,Senegal,Iraq,I,,,,SEN,IRQ,0.703,0.205,0.091,0,0,0
