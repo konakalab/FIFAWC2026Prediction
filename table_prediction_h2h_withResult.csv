@@ -59,12 +59,12 @@ Date,TeamA,TeamB,Group,GoalsA,GoalsB,matchURL,CodeA,CodeB,pWin,pDraw,pLose,aWin,
 2026/6/25,Paraguay,Australia,D,0,0,,PAR,AUS,0.325,0.344,0.332,0,1,0
 2026/6/25,Ecuador,Germany,E,2,1,,ECU,GER,0.319,0.343,0.338,1,0,0
 2026/6/25,Curaçao,Ivory Coast,E,0,2,,CUW,CIV,0.06,0.151,0.788,0,0,1
-2026/6/26,Senegal,Iraq,I,,,,SEN,IRQ,0.703,0.205,0.091,0,0,0
-2026/6/26,Norway,France,I,,,,NOR,FRA,0.183,0.301,0.516,0,0,0
-2026/6/26,Egypt,Iran,G,,,,EGY,IRN,0.29,0.341,0.369,0,0,0
-2026/6/26,Uruguay,Spain,H,,,,URU,ESP,0.133,0.258,0.609,0,0,0
-2026/6/26,Cape Verde,Saudi Arabia,H,,,,CPV,KSA,0.389,0.338,0.272,0,0,0
-2026/6/26,New Zealand,Belgium,G,,,,NZL,BEL,0.097,0.213,0.69,0,0,0
+2026/6/26,Senegal,Iraq,I,5,0,,SEN,IRQ,0.703,0.205,0.091,1,0,0
+2026/6/26,Norway,France,I,1,4,,NOR,FRA,0.183,0.301,0.516,0,0,1
+2026/6/26,Egypt,Iran,G,1,1,,EGY,IRN,0.29,0.341,0.369,0,1,0
+2026/6/26,Uruguay,Spain,H,0,1,,URU,ESP,0.133,0.258,0.609,0,0,1
+2026/6/26,Cape Verde,Saudi Arabia,H,0,0,,CPV,KSA,0.389,0.338,0.272,0,1,0
+2026/6/26,New Zealand,Belgium,G,1,5,,NZL,BEL,0.097,0.213,0.69,0,0,1
 2026/6/27,Panama,England,L,,,,PAN,ENG,0.062,0.155,0.783,0,0,0
 2026/6/27,Colombia,Portugal,K,,,,COL,POR,0.414,0.333,0.252,0,0,0
 2026/6/27,DR Congo,Uzbekistan,K,,,,COD,UZB,0.335,0.343,0.321,0,0,0
