@@ -304,6 +304,64 @@ if df is not None:
                                 dict(x=1, y=0.5, xref="x", yref="paper", text=f"<b>{row['CodeB']}</b>", showarrow=False, xanchor="left", xshift=10, font=dict(size=20)),
                             ]
                         )
+
+                        # 3. 帯グラフの描画（オリジナル設定・カラーを100%完全維持）
+                        fig_h2h.add_trace(go.Bar(
+                            x=[val_win], y=["Match"],
+                            orientation='h',
+                            marker=dict(color='#2222EE'), # 本来の鮮やかな青
+                            text=text_win,
+                            textposition='inside',
+                            insidetextanchor='middle',
+                            textfont=dict(size=20),
+                            hoverinfo="skip",
+                            name=f"{row['CodeA']} 勝"
+                        ))
+                        fig_h2h.add_trace(go.Bar(
+                            x=[val_draw], y=["Match"],
+                            orientation='h',
+                            marker=dict(color='#BDBDBD'), # 本来のグレー
+                            text=text_draw,
+                            textposition='inside',
+                            insidetextanchor='middle',
+                            textfont=dict(size=20),
+                            hoverinfo="skip",
+                            name="引分"
+                        ))
+                        fig_h2h.add_trace(go.Bar(
+                            x=[val_lose], y=["Match"],
+                            orientation='h',
+                            marker=dict(color='#C62828'), # 本来の鮮やかな赤
+                            text=text_lose,
+                            textposition='inside',
+                            insidetextanchor='middle',
+                            textfont=dict(size=20),
+                            hoverinfo="skip",
+                            name=f"{row['CodeB']} 勝"
+                        ))
+    
+                        fig_h2h.update_layout(
+                            barmode='stack',
+                            height=90,
+                            margin=dict(l=70, r=70, t=00, b=0),
+                            showlegend=False,
+                            xaxis=dict(showticklabels=False, range=[0, 1], fixedrange=True),
+                            yaxis=dict(showticklabels=False, fixedrange=True),
+                            paper_bgcolor='rgba(0,0,0,0)',
+                            plot_bgcolor='rgba(0,0,0,0)',
+                            annotations=[
+                                dict(
+                                    x=0, y=0.5, xref="x", yref="paper",
+                                    text=f"<b>{row['CodeA']}</b>", showarrow=False,
+                                    xanchor="right", xshift=-10, font=dict(size=20)
+                                ),
+                                dict(
+                                    x=1, y=0.5, xref="x", yref="paper",
+                                    text=f"<b>{row['CodeB']}</b>", showarrow=False,
+                                    xanchor="left", xshift=10, font=dict(size=20)
+                                ),
+                            ]
+                        )
                         st.plotly_chart(fig_h2h, width='stretch', key=f"sep_tm_{round_name}_{idx}")
     st.divider()
 
