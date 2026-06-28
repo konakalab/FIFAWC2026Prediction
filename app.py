@@ -247,6 +247,65 @@ if df is not None:
     # =========================================================================
     
     st.divider()
+    st.subheader("ノックアウトステージ(決勝トーナメント)")
+    # =========================================================================
+    # 🏅 【タブ構造 1】決勝トーナメント専用の処理と表示
+    # =========================================================================
+    file_h2h_result = 'table_prediction_h2h_withResult.csv'
+    if os.path.exists(file_h2h_result):
+        df_matches = pd.read_csv(file_h2h_result)
+        all_groups_in_csv = df_matches['Group'].unique().astype(str)
+        
+        # 決勝トーナメントとして想定されているラウンドの定義
+        tournament_rounds = ['R32', 'R16', 'QF', 'SF', '3PL', 'Final']
+        # CSV内に現在存在する決勝ステージのラウンドのみを定義順に抽出
+        tm_rounds = [g for g in tournament_rounds if g in all_groups_in_csv]
+        
+        if tm_rounds:
+            # 決勝トーナメント専用の独立したタブを生成
+            tm_tabs = st.tabs([r for r in tm_rounds])
+            
+            for r_idx, round_name in enumerate(tm_rounds):
+                with tm_tabs[r_idx]:
+                    # 決勝トーナメントの該当ラウンドの試合データのみを抽出してループ
+                    round_matches = df_matches[df_matches['Group'] == round_name]
+                    
+                    for idx, row in round_matches.iterrows():
+                        has_result = 'GoalsA' in row.index and pd.notna(row['GoalsA'])
+                        score_str = f" {int(row['GoalsA'])}-{int(row['GoalsB'])}" if has_result else ""
+                        
+                        if has_result:
+                            st.write(f"**{row['Date']} {row['TeamA']} vs {row['TeamB']}{score_str}**")
+                            a_win  = float(row['aWin'])  if ('aWin'  in row.index and pd.notna(row['aWin']))  else 0.0
+                            a_draw = float(row['aDraw']) if ('aDraw' in row.index and pd.notna(row['aDraw'])) else 0.0
+                            a_lose = float(row['aLose']) if ('aLose' in row.index and pd.notna(row['aLose'])) else 0.0
+                            color_A, color_Draw, color_B, text_color = '#2222EE', '#BDBDBD', '#C62828', 'white'
+                        else:
+                            st.write(f"**{row['Date']} {row['TeamA']} vs {row['TeamB']} (未実施)**")
+                            a_win = a_draw = a_lose = 0.0
+                            color_A, color_Draw, color_B, text_color = '#FFFFFF', '#FFFFFF', '#FFFFFF', '#333333'
+                        
+                        text_win  = f"★ {row['CodeA']} {row['pWin']:.1%}" if (has_result and a_win  == 1.0) else f"{row['CodeA']} {row['pWin']:.1%}"
+                        text_draw = f"★ Draw {row['pDraw']:.1%}"           if (has_result and a_draw == 1.0) else f"Draw {row['pDraw']:.1%}"
+                        text_lose = f"★ {row['CodeB']} {row['pLose']:.1%}" if (has_result and a_lose == 1.0) else f"{row['CodeB']} {row['pLose']:.1%}"
+                        
+                        fig_h2h = go.Figure()
+                        fig_h2h.add_trace(go.Bar(x=[row['pWin']], y=["Match"], orientation='h', marker=dict(color=color_A, line=dict(color='#777777', width=1) if not has_result else None), text=text_win, textposition='inside', insidetextanchor='middle', textfont=dict(size=20, color=text_color), hoverinfo="skip", name=f"{row['CodeA']} 勝"))
+                        fig_h2h.add_trace(go.Bar(x=[row['pDraw']], y=["Match"], orientation='h', marker=dict(color=color_Draw, line=dict(color='#777777', width=1) if not has_result else None), text=text_draw, textposition='inside', insidetextanchor='middle', textfont=dict(size=20, color=text_color), hoverinfo="skip", name="引分"))
+                        fig_h2h.add_trace(go.Bar(x=[row['pLose']], y=["Match"], orientation='h', marker=dict(color=color_B, line=dict(color='#777777', width=1) if not has_result else None), text=text_lose, textposition='inside', insidetextanchor='middle', textfont=dict(size=20, color=text_color), hoverinfo="skip", name=f"{row['CodeB']} 勝"))
+                        
+                        fig_h2h.update_layout(
+                            barmode='stack', height=90, margin=dict(l=70, r=70, t=0, b=0), showlegend=False,
+                            xaxis=dict(showticklabels=False, range=[0, 1], fixedrange=True),
+                            yaxis=dict(showticklabels=False, fixedrange=True),
+                            paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)',
+                            annotations=[
+                                dict(x=0, y=0.5, xref="x", yref="paper", text=f"<b>{row['CodeA']}</b>", showarrow=False, xanchor="right", xshift=-10, font=dict(size=20)),
+                                dict(x=1, y=0.5, xref="x", yref="paper", text=f"<b>{row['CodeB']}</b>", showarrow=False, xanchor="left", xshift=10, font=dict(size=20)),
+                            ]
+                        )
+                        st.plotly_chart(fig_h2h, width='stretch', key=f"sep_tm_{round_name}_{idx}")
+    st.divider()
 
     st.subheader("グループステージ")
     st.write("※列名をクリックするとソートできます。")
