@@ -65,9 +65,9 @@ Date,TeamA,TeamB,Group,GoalsA,GoalsB,matchURL,CodeA,CodeB,pWin,pDraw,pLose,aWin,
 2026/6/26,Uruguay,Spain,H,0,1,,URU,ESP,0.133,0.258,0.609,0,0,1
 2026/6/26,Cape Verde,Saudi Arabia,H,0,0,,CPV,KSA,0.389,0.338,0.272,0,1,0
 2026/6/26,New Zealand,Belgium,G,1,5,,NZL,BEL,0.097,0.213,0.69,0,0,1
-2026/6/27,Panama,England,L,,,,PAN,ENG,0.062,0.155,0.783,0,0,0
-2026/6/27,Colombia,Portugal,K,,,,COL,POR,0.414,0.333,0.252,0,0,0
-2026/6/27,DR Congo,Uzbekistan,K,,,,COD,UZB,0.335,0.343,0.321,0,0,0
-2026/6/27,Algeria,Austria,J,,,,ALG,AUT,0.221,0.322,0.457,0,0,0
-2026/6/27,Jordan,Argentina,J,,,,JOR,ARG,0.032,0.09,0.878,0,0,0
-2026/6/27,Croatia,Ghana,L,,,,CRO,GHA,0.737,0.185,0.079,0,0,0
+2026/6/27,Panama,England,L,0,2,,PAN,ENG,0.062,0.155,0.783,0,0,1
+2026/6/27,Colombia,Portugal,K,0,0,,COL,POR,0.414,0.333,0.252,0,1,0
+2026/6/27,DR Congo,Uzbekistan,K,3,1,,COD,UZB,0.335,0.343,0.321,1,0,0
+2026/6/27,Algeria,Austria,J,3,3,,ALG,AUT,0.221,0.322,0.457,0,1,0
+2026/6/27,Jordan,Argentina,J,1,3,,JOR,ARG,0.032,0.09,0.878,0,0,1
+2026/6/27,Croatia,Ghana,L,2,1,,CRO,GHA,0.737,0.185,0.079,1,0,0
