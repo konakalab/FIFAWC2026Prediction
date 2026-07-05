@@ -1,89 +1,89 @@
-Date,TeamA,TeamB,Group,GoalsA,GoalsB,matchURL,CodeA,CodeB,pWin,pDraw,pLose,aWin,aDraw,aLose
-2026/6/11,Mexico,South Africa,A,2,0,,MEX,RSA,0.716,0.197,0.086,1,0,0
-2026/6/11,South Korea,Czech Republic,A,2,1,,KOR,CZE,0.371,0.341,0.288,1,0,0
-2026/6/12,Australia,Turkey,D,2,0,,AUS,TUR,0.341,0.343,0.315,1,0,0
-2026/6/12,Qatar,Switzerland,B,1,1,,QAT,SUI,0.056,0.143,0.801,0,1,0
-2026/6/12,Canada,Bosnia and Herzegovina,B,1,1,,CAN,BIH,0.734,0.186,0.079,0,1,0
-2026/6/12,United States,Paraguay,D,4,1,,USA,PAR,0.369,0.341,0.29,1,0,0
-2026/6/13,Brazil,Morocco,C,1,1,,BRA,MAR,0.402,0.336,0.262,0,1,0
-2026/6/13,Haiti,Scotland,C,0,1,,HAI,SCO,0.11,0.231,0.659,0,0,1
-2026/6/14,Sweden,Tunisia,F,5,1,,SWE,TUN,0.356,0.342,0.302,1,0,0
-2026/6/14,Netherlands,Japan,F,2,2,,NED,JPN,0.369,0.341,0.29,0,1,0
-2026/6/14,Ivory Coast,Ecuador,E,1,0,,CIV,ECU,0.15,0.276,0.574,1,0,0
-2026/6/14,Germany,Curaçao,E,7,1,,GER,CUW,0.915,0.063,0.022,1,0,0
-2026/6/15,Saudi Arabia,Uruguay,H,1,1,,KSA,URU,0.07,0.17,0.759,0,1,0
-2026/6/15,Iran,New Zealand,G,2,2,,IRN,NZL,0.593,0.266,0.141,0,1,0
-2026/6/15,Spain,Cape Verde,H,0,0,,ESP,CPV,0.885,0.085,0.03,0,1,0
-2026/6/15,Belgium,Egypt,G,1,1,,BEL,EGY,0.472,0.317,0.211,0,1,0
-2026/6/16,France,Senegal,I,3,1,,FRA,SEN,0.522,0.299,0.179,1,0,0
-2026/6/16,Iraq,Norway,I,1,4,,IRQ,NOR,0.09,0.202,0.708,0,0,1
-2026/6/16,Austria,Jordan,J,3,1,,AUT,JOR,0.677,0.221,0.102,1,0,0
-2026/6/16,Argentina,Algeria,J,3,0,,ARG,ALG,0.743,0.181,0.076,1,0,0
-2026/6/17,Portugal,DR Congo,K,1,1,,POR,COD,0.637,0.243,0.12,0,1,0
-2026/6/17,Uzbekistan,Colombia,K,1,3,,UZB,COL,0.083,0.193,0.724,0,0,1
-2026/6/17,England,Croatia,L,4,2,,ENG,CRO,0.47,0.318,0.212,1,0,0
-2026/6/17,Ghana,Panama,L,1,0,,GHA,PAN,0.258,0.335,0.407,1,0,0
-2026/6/18,Switzerland,Bosnia and Herzegovina,B,4,1,,SUI,BIH,0.748,0.177,0.074,1,0,0
-2026/6/18,Mexico,South Korea,A,1,0,,MEX,KOR,0.527,0.297,0.177,1,0,0
-2026/6/18,Czech Republic,South Africa,A,1,1,,CZE,RSA,0.479,0.315,0.206,0,1,0
-2026/6/18,Canada,Qatar,B,6,0,,CAN,QAT,0.789,0.151,0.06,1,0,0
-2026/6/19,United States,Australia,D,2,0,,USA,AUS,0.366,0.342,0.293,1,0,0
-2026/6/19,Brazil,Haiti,C,3,0,,BRA,HAI,0.853,0.107,0.039,1,0,0
-2026/6/19,Turkey,Paraguay,D,0,1,,TUR,PAR,0.319,0.343,0.338,0,0,1
-2026/6/19,Scotland,Morocco,C,0,1,,SCO,MAR,0.183,0.301,0.517,0,0,1
-2026/6/20,Ecuador,Curaçao,E,0,0,,ECU,CUW,0.911,0.066,0.023,0,1,0
-2026/6/20,Germany,Ivory Coast,E,2,1,,GER,CIV,0.585,0.27,0.145,1,0,0
-2026/6/20,Netherlands,Sweden,F,5,1,,NED,SWE,0.676,0.221,0.103,1,0,0
-2026/6/20,Tunisia,Japan,F,0,4,,TUN,JPN,0.108,0.229,0.663,0,0,1
-2026/6/21,Belgium,Iran,G,0,0,,BEL,IRN,0.428,0.33,0.242,0,1,0
-2026/6/21,New Zealand,Egypt,G,1,3,,NZL,EGY,0.164,0.287,0.55,0,0,1
-2026/6/21,Spain,Saudi Arabia,H,4,0,,ESP,KSA,0.91,0.067,0.023,1,0,0
-2026/6/21,Uruguay,Cape Verde,H,2,2,,URU,CPV,0.707,0.203,0.09,0,1,0
-2026/6/22,Norway,Senegal,I,3,2,,NOR,SEN,0.333,0.344,0.323,1,0,0
-2026/6/22,France,Iraq,I,3,0,,FRA,IRQ,0.841,0.116,0.043,1,0,0
-2026/6/22,Argentina,Austria,J,2,0,,ARG,AUT,0.627,0.249,0.125,1,0,0
-2026/6/22,Jordan,Algeria,J,1,2,,JOR,ALG,0.164,0.287,0.549,0,0,1
-2026/6/23,Colombia,DR Congo,K,1,0,,COL,COD,0.717,0.197,0.086,1,0,0
-2026/6/23,Panama,Croatia,L,0,1,,PAN,CRO,0.107,0.227,0.666,0,0,1
-2026/6/23,England,Ghana,L,0,0,,ENG,GHA,0.835,0.12,0.045,0,1,0
-2026/6/23,Portugal,Uzbekistan,K,5,0,,POR,UZB,0.644,0.239,0.116,1,0,0
-2026/6/24,Switzerland,Canada,B,2,1,,SUI,CAN,0.344,0.343,0.313,1,0,0
-2026/6/24,Scotland,Brazil,C,0,3,,SCO,BRA,0.14,0.265,0.595,0,0,1
-2026/6/24,Bosnia and Herzegovina,Qatar,B,3,1,,BIH,QAT,0.398,0.337,0.265,1,0,0
-2026/6/24,Morocco,Haiti,C,4,2,,MAR,HAI,0.809,0.138,0.053,1,0,0
-2026/6/24,South Africa,South Korea,A,1,0,,RSA,KOR,0.177,0.297,0.526,1,0,0
-2026/6/24,Czech Republic,Mexico,A,0,3,,CZE,MEX,0.151,0.276,0.573,0,0,1
-2026/6/25,Japan,Sweden,F,1,1,,JPN,SWE,0.635,0.244,0.121,0,1,0
-2026/6/25,Tunisia,Netherlands,F,1,3,,TUN,NED,0.092,0.206,0.702,0,0,1
-2026/6/25,Turkey,United States,D,3,2,,TUR,USA,0.281,0.34,0.379,1,0,0
-2026/6/25,Paraguay,Australia,D,0,0,,PAR,AUS,0.325,0.344,0.332,0,1,0
-2026/6/25,Ecuador,Germany,E,2,1,,ECU,GER,0.319,0.343,0.338,1,0,0
-2026/6/25,Curaçao,Ivory Coast,E,0,2,,CUW,CIV,0.06,0.151,0.788,0,0,1
-2026/6/26,Senegal,Iraq,I,5,0,,SEN,IRQ,0.703,0.205,0.091,1,0,0
-2026/6/26,Norway,France,I,1,4,,NOR,FRA,0.183,0.301,0.516,0,0,1
-2026/6/26,Egypt,Iran,G,1,1,,EGY,IRN,0.29,0.341,0.369,0,1,0
-2026/6/26,Uruguay,Spain,H,0,1,,URU,ESP,0.133,0.258,0.609,0,0,1
-2026/6/26,Cape Verde,Saudi Arabia,H,0,0,,CPV,KSA,0.389,0.338,0.272,0,1,0
-2026/6/26,New Zealand,Belgium,G,1,5,,NZL,BEL,0.097,0.213,0.69,0,0,1
-2026/6/27,Panama,England,L,0,2,,PAN,ENG,0.062,0.155,0.783,0,0,1
-2026/6/27,Colombia,Portugal,K,0,0,,COL,POR,0.414,0.333,0.252,0,1,0
-2026/6/27,DR Congo,Uzbekistan,K,3,1,,COD,UZB,0.335,0.343,0.321,1,0,0
-2026/6/27,Algeria,Austria,J,3,3,,ALG,AUT,0.221,0.322,0.457,0,1,0
-2026/6/27,Jordan,Argentina,J,1,3,,JOR,ARG,0.032,0.09,0.878,0,0,1
-2026/6/27,Croatia,Ghana,L,2,1,,CRO,GHA,0.737,0.185,0.079,1,0,0
-2026/6/28 0:00,South Africa,Canada,R32,,,,RSA,CAN,0.205 ,0.300 ,0.495 ,0,0,0
-2026/6/29 0:00,Brazil,Japan,R32,,,,BRA,JPN,0.385 ,0.328 ,0.287 ,0,0,0
-2026/6/29 0:00,Germany,Paraguay,R32,,,,GER,PAR,0.514 ,0.295 ,0.191 ,0,0,0
-2026/6/29 0:00,Netherlands,Morocco,R32,,,,NED,MAR,0.392 ,0.325 ,0.283 ,0,0,0
-2026/6/30 0:00,Ivory Coast,Norway,R32,,,,CIV,NOR,0.236 ,0.299 ,0.465 ,0,0,0
-2026/6/30 0:00,France,Sweden,R32,,,,FRA,SWE,0.719 ,0.191 ,0.091 ,0,0,0
-2026/6/30 0:00,Mexico,Ecuador,R32,,,,MEX,ECU,0.372 ,0.330 ,0.299 ,0,0,0
-2026/7/1 0:00,England,DR Congo,R32,,,,ENG,COD,0.691 ,0.208 ,0.101 ,0,0,0
-2026/7/1 0:00,Belgium,Senegal,R32,,,,BEL,SEN,0.334 ,0.331 ,0.335 ,0,0,0
-2026/7/1 0:00,United States,Bosnia and Herzegovina,R32,,,,USA,BIH,0.688 ,0.206 ,0.106 ,0,0,0
-2026/7/2 0:00,Spain,Austria,R32,,,,ESP,AUT,0.624 ,0.245 ,0.131 ,0,0,0
-2026/7/2 0:00,Portugal,Croatia,R32,,,,POR,CRO,0.399 ,0.327 ,0.274 ,0,0,0
-2026/7/2 0:00,Switzerland,Algeria,R32,,,,SUI,ALG,0.415 ,0.325 ,0.261 ,0,0,0
-2026/7/3 0:00,Australia,Egypt,R32,,,,AUS,EGY,0.387 ,0.328 ,0.285 ,0,0,0
-2026/7/3 0:00,Argentina,Cape Verde,R32,,,,ARG,CPV,0.848 ,0.107 ,0.045 ,0,0,0
-2026/7/3 0:00,Colombia,Ghana,R32,,,,COL,GHA,0.770 ,0.155 ,0.075 ,0,0,0
+Date,TeamA,TeamB,Group,GoalsA,GoalsB,matchURL,CodeA,CodeB,pWin,pDraw,pLose,aWin,aDraw,aLose,isOT,isPK,PKA,PKB
+2026/6/11,Mexico,South Africa,A,2,0,,MEX,RSA,0.716,0.197,0.086,1,0,0,0,0,0,0
+2026/6/11,South Korea,Czech Republic,A,2,1,,KOR,CZE,0.371,0.341,0.288,1,0,0,0,0,0,0
+2026/6/12,Australia,Turkey,D,2,0,,AUS,TUR,0.341,0.343,0.315,1,0,0,0,0,0,0
+2026/6/12,Qatar,Switzerland,B,1,1,,QAT,SUI,0.056,0.143,0.801,0,1,0,0,0,0,0
+2026/6/12,Canada,Bosnia and Herzegovina,B,1,1,,CAN,BIH,0.734,0.186,0.079,0,1,0,0,0,0,0
+2026/6/12,United States,Paraguay,D,4,1,,USA,PAR,0.369,0.341,0.29,1,0,0,0,0,0,0
+2026/6/13,Brazil,Morocco,C,1,1,,BRA,MAR,0.402,0.336,0.262,0,1,0,0,0,0,0
+2026/6/13,Haiti,Scotland,C,0,1,,HAI,SCO,0.11,0.231,0.659,0,0,1,0,0,0,0
+2026/6/14,Sweden,Tunisia,F,5,1,,SWE,TUN,0.356,0.342,0.302,1,0,0,0,0,0,0
+2026/6/14,Netherlands,Japan,F,2,2,,NED,JPN,0.369,0.341,0.29,0,1,0,0,0,0,0
+2026/6/14,Ivory Coast,Ecuador,E,1,0,,CIV,ECU,0.15,0.276,0.574,1,0,0,0,0,0,0
+2026/6/14,Germany,Curaçao,E,7,1,,GER,CUW,0.915,0.063,0.022,1,0,0,0,0,0,0
+2026/6/15,Saudi Arabia,Uruguay,H,1,1,,KSA,URU,0.07,0.17,0.759,0,1,0,0,0,0,0
+2026/6/15,Iran,New Zealand,G,2,2,,IRN,NZL,0.593,0.266,0.141,0,1,0,0,0,0,0
+2026/6/15,Spain,Cape Verde,H,0,0,,ESP,CPV,0.885,0.085,0.03,0,1,0,0,0,0,0
+2026/6/15,Belgium,Egypt,G,1,1,,BEL,EGY,0.472,0.317,0.211,0,1,0,0,0,0,0
+2026/6/16,France,Senegal,I,3,1,,FRA,SEN,0.522,0.299,0.179,1,0,0,0,0,0,0
+2026/6/16,Iraq,Norway,I,1,4,,IRQ,NOR,0.09,0.202,0.708,0,0,1,0,0,0,0
+2026/6/16,Austria,Jordan,J,3,1,,AUT,JOR,0.677,0.221,0.102,1,0,0,0,0,0,0
+2026/6/16,Argentina,Algeria,J,3,0,,ARG,ALG,0.743,0.181,0.076,1,0,0,0,0,0,0
+2026/6/17,Portugal,DR Congo,K,1,1,,POR,COD,0.637,0.243,0.12,0,1,0,0,0,0,0
+2026/6/17,Uzbekistan,Colombia,K,1,3,,UZB,COL,0.083,0.193,0.724,0,0,1,0,0,0,0
+2026/6/17,England,Croatia,L,4,2,,ENG,CRO,0.47,0.318,0.212,1,0,0,0,0,0,0
+2026/6/17,Ghana,Panama,L,1,0,,GHA,PAN,0.258,0.335,0.407,1,0,0,0,0,0,0
+2026/6/18,Switzerland,Bosnia and Herzegovina,B,4,1,,SUI,BIH,0.748,0.177,0.074,1,0,0,0,0,0,0
+2026/6/18,Mexico,South Korea,A,1,0,,MEX,KOR,0.527,0.297,0.177,1,0,0,0,0,0,0
+2026/6/18,Czech Republic,South Africa,A,1,1,,CZE,RSA,0.479,0.315,0.206,0,1,0,0,0,0,0
+2026/6/18,Canada,Qatar,B,6,0,,CAN,QAT,0.789,0.151,0.06,1,0,0,0,0,0,0
+2026/6/19,United States,Australia,D,2,0,,USA,AUS,0.366,0.342,0.293,1,0,0,0,0,0,0
+2026/6/19,Brazil,Haiti,C,3,0,,BRA,HAI,0.853,0.107,0.039,1,0,0,0,0,0,0
+2026/6/19,Turkey,Paraguay,D,0,1,,TUR,PAR,0.319,0.343,0.338,0,0,1,0,0,0,0
+2026/6/19,Scotland,Morocco,C,0,1,,SCO,MAR,0.183,0.301,0.517,0,0,1,0,0,0,0
+2026/6/20,Ecuador,Curaçao,E,0,0,,ECU,CUW,0.911,0.066,0.023,0,1,0,0,0,0,0
+2026/6/20,Germany,Ivory Coast,E,2,1,,GER,CIV,0.585,0.27,0.145,1,0,0,0,0,0,0
+2026/6/20,Netherlands,Sweden,F,5,1,,NED,SWE,0.676,0.221,0.103,1,0,0,0,0,0,0
+2026/6/20,Tunisia,Japan,F,0,4,,TUN,JPN,0.108,0.229,0.663,0,0,1,0,0,0,0
+2026/6/21,Belgium,Iran,G,0,0,,BEL,IRN,0.428,0.33,0.242,0,1,0,0,0,0,0
+2026/6/21,New Zealand,Egypt,G,1,3,,NZL,EGY,0.164,0.287,0.55,0,0,1,0,0,0,0
+2026/6/21,Spain,Saudi Arabia,H,4,0,,ESP,KSA,0.91,0.067,0.023,1,0,0,0,0,0,0
+2026/6/21,Uruguay,Cape Verde,H,2,2,,URU,CPV,0.707,0.203,0.09,0,1,0,0,0,0,0
+2026/6/22,Norway,Senegal,I,3,2,,NOR,SEN,0.333,0.344,0.323,1,0,0,0,0,0,0
+2026/6/22,France,Iraq,I,3,0,,FRA,IRQ,0.841,0.116,0.043,1,0,0,0,0,0,0
+2026/6/22,Argentina,Austria,J,2,0,,ARG,AUT,0.627,0.249,0.125,1,0,0,0,0,0,0
+2026/6/22,Jordan,Algeria,J,1,2,,JOR,ALG,0.164,0.287,0.549,0,0,1,0,0,0,0
+2026/6/23,Colombia,DR Congo,K,1,0,,COL,COD,0.717,0.197,0.086,1,0,0,0,0,0,0
+2026/6/23,Panama,Croatia,L,0,1,,PAN,CRO,0.107,0.227,0.666,0,0,1,0,0,0,0
+2026/6/23,England,Ghana,L,0,0,,ENG,GHA,0.835,0.12,0.045,0,1,0,0,0,0,0
+2026/6/23,Portugal,Uzbekistan,K,5,0,,POR,UZB,0.644,0.239,0.116,1,0,0,0,0,0,0
+2026/6/24,Switzerland,Canada,B,2,1,,SUI,CAN,0.344,0.343,0.313,1,0,0,0,0,0,0
+2026/6/24,Scotland,Brazil,C,0,3,,SCO,BRA,0.14,0.265,0.595,0,0,1,0,0,0,0
+2026/6/24,Bosnia and Herzegovina,Qatar,B,3,1,,BIH,QAT,0.398,0.337,0.265,1,0,0,0,0,0,0
+2026/6/24,Morocco,Haiti,C,4,2,,MAR,HAI,0.809,0.138,0.053,1,0,0,0,0,0,0
+2026/6/24,South Africa,South Korea,A,1,0,,RSA,KOR,0.177,0.297,0.526,1,0,0,0,0,0,0
+2026/6/24,Czech Republic,Mexico,A,0,3,,CZE,MEX,0.151,0.276,0.573,0,0,1,0,0,0,0
+2026/6/25,Japan,Sweden,F,1,1,,JPN,SWE,0.635,0.244,0.121,0,1,0,0,0,0,0
+2026/6/25,Tunisia,Netherlands,F,1,3,,TUN,NED,0.092,0.206,0.702,0,0,1,0,0,0,0
+2026/6/25,Turkey,United States,D,3,2,,TUR,USA,0.281,0.34,0.379,1,0,0,0,0,0,0
+2026/6/25,Paraguay,Australia,D,0,0,,PAR,AUS,0.325,0.344,0.332,0,1,0,0,0,0,0
+2026/6/25,Ecuador,Germany,E,2,1,,ECU,GER,0.319,0.343,0.338,1,0,0,0,0,0,0
+2026/6/25,Curaçao,Ivory Coast,E,0,2,,CUW,CIV,0.06,0.151,0.788,0,0,1,0,0,0,0
+2026/6/26,Senegal,Iraq,I,5,0,,SEN,IRQ,0.703,0.205,0.091,1,0,0,0,0,0,0
+2026/6/26,Norway,France,I,1,4,,NOR,FRA,0.183,0.301,0.516,0,0,1,0,0,0,0
+2026/6/26,Egypt,Iran,G,1,1,,EGY,IRN,0.29,0.341,0.369,0,1,0,0,0,0,0
+2026/6/26,Uruguay,Spain,H,0,1,,URU,ESP,0.133,0.258,0.609,0,0,1,0,0,0,0
+2026/6/26,Cape Verde,Saudi Arabia,H,0,0,,CPV,KSA,0.389,0.338,0.272,0,1,0,0,0,0,0
+2026/6/26,New Zealand,Belgium,G,1,5,,NZL,BEL,0.097,0.213,0.69,0,0,1,0,0,0,0
+2026/6/27,Panama,England,L,0,2,,PAN,ENG,0.062,0.155,0.783,0,0,1,0,0,0,0
+2026/6/27,Colombia,Portugal,K,0,0,,COL,POR,0.414,0.333,0.252,0,1,0,0,0,0,0
+2026/6/27,DR Congo,Uzbekistan,K,3,1,,COD,UZB,0.335,0.343,0.321,1,0,0,0,0,0,0
+2026/6/27,Algeria,Austria,J,3,3,,ALG,AUT,0.221,0.322,0.457,0,1,0,0,0,0,0
+2026/6/27,Jordan,Argentina,J,1,3,,JOR,ARG,0.032,0.09,0.878,0,0,1,0,0,0,0
+2026/6/27,Croatia,Ghana,L,2,1,,CRO,GHA,0.737,0.185,0.079,1,0,0,0,0,0,0
+2026/6/28 0:00,South Africa,Canada,R32,0,1,,RSA,CAN,0.205,0.3,0.495,0,0,1,0,0,0,0
+2026/6/29 0:00,Brazil,Japan,R32,2,1,,BRA,JPN,0.385,0.328,0.287,1,0,0,0,0,0,0
+2026/6/29 0:00,Germany,Paraguay,R32,1,1,,GER,PAR,0.514,0.295,0.191,0,1,0,1,1,3,4
+2026/6/29 0:00,Netherlands,Morocco,R32,1,1,,NED,MAR,0.392,0.325,0.283,0,1,0,1,1,2,3
+2026/6/30 0:00,Ivory Coast,Norway,R32,1,2,,CIV,NOR,0.236,0.299,0.465,0,0,1,0,0,0,0
+2026/6/30 0:00,France,Sweden,R32,3,0,,FRA,SWE,0.719,0.191,0.091,1,0,0,0,0,0,0
+2026/6/30 0:00,Mexico,Ecuador,R32,2,0,,MEX,ECU,0.372,0.33,0.299,1,0,0,0,0,0,0
+2026/7/1 0:00,England,DR Congo,R32,2,1,,ENG,COD,0.691,0.208,0.101,1,0,0,0,0,0,0
+2026/7/1 0:00,Belgium,Senegal,R32,3,2,,BEL,SEN,0.334,0.331,0.335,1,0,0,0,0,0,0
+2026/7/1 0:00,United States,Bosnia and Herzegovina,R32,2,0,,USA,BIH,0.688,0.206,0.106,1,0,0,0,0,0,0
+2026/7/2 0:00,Spain,Austria,R32,3,0,,ESP,AUT,0.624,0.245,0.131,1,0,0,0,0,0,0
+2026/7/2 0:00,Portugal,Croatia,R32,2,1,,POR,CRO,0.399,0.327,0.274,1,0,0,0,0,0,0
+2026/7/2 0:00,Switzerland,Algeria,R32,2,0,,SUI,ALG,0.415,0.325,0.261,1,0,0,0,0,0,0
+2026/7/3 0:00,Australia,Egypt,R32,1,1,,AUS,EGY,0.387,0.328,0.285,0,1,0,1,1,2,4
+2026/7/3 0:00,Argentina,Cape Verde,R32,3,2,,ARG,CPV,0.848,0.107,0.045,1,0,0,1,0,0,0
+2026/7/3 0:00,Colombia,Ghana,R32,1,0,,COL,GHA,0.77,0.155,0.075,1,0,0,0,0,0,0
