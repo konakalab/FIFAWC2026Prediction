@@ -85,7 +85,7 @@ Date,TeamA,TeamB,Group,GoalsA,GoalsB,matchURL,CodeA,CodeB,pWin,pDraw,pLose,aWin,
 2026/7/2 0:00,Portugal,Croatia,R32,2,1,,POR,CRO,0.399,0.327,0.274,1,0,0,0,0,0,0
 2026/7/2 0:00,Switzerland,Algeria,R32,2,0,,SUI,ALG,0.415,0.325,0.261,1,0,0,0,0,0,0
 2026/7/3 0:00,Australia,Egypt,R32,1,1,,AUS,EGY,0.387,0.328,0.285,0,1,0,1,1,2,4
-2026/7/3 0:00,Argentina,Cape Verde,R32,3,2,,ARG,CPV,0.848,0.107,0.045,1,0,0,1,0,0,0
+2026/7/3 0:00,Argentina,Cape Verde,R32,3,2,,ARG,CPV,0.848,0.107,0.045,0,1,0,1,0,0,0
 2026/7/3 0:00,Colombia,Ghana,R32,1,0,,COL,GHA,0.77,0.155,0.075,1,0,0,0,0,0,0
 2026/7/4 0:00,Canada,Morocco,R16,0,3,,CAN,MAR,0.177342274,0.28528717,0.537370556,0,0,1,0,0,0,0
 2026/7/4 0:00,Paraguay,France,R16,0,1,,PAR,FRA,0.110503994,0.22193208,0.667563926,0,0,1,0,0,0,0
@@ -95,3 +95,7 @@ Date,TeamA,TeamB,Group,GoalsA,GoalsB,matchURL,CodeA,CodeB,pWin,pDraw,pLose,aWin,
 2026/7/6 0:00,United States,Belgium,R16,1,4,,USA,BEL,0.298735411,0.331373904,0.369890685,0,0,1,0,0,0,0
 2026/7/7 0:00,Argentina,Egypt,R16,3,2,,ARG,EGY,0.723658443,0.184392383,0.091949174,1,0,0,0,0,0,0
 2026/7/7 0:00,Switzerland,Colombia,R16,1,1,,SUI,COL,0.224861417,0.297462925,0.477675658,0,1,0,1,1,4,3
+2026/7/9 0:00,France,Morocco,QF,,,,FRA,MAR,0.484 ,0.304 ,0.212 ,0,0,0,0,0,0,0
+2026/7/10 0:00,Spain,Belgium,QF,,,,ESP,BEL,0.580 ,0.258 ,0.162 ,0,0,0,0,0,0,0
+2026/7/11 0:00,Norway,England,QF,,,,NOR,ENG,0.176 ,0.283 ,0.541 ,0,0,0,0,0,0,0
+2026/7/11 0:00,Argentina,Switzerland,QF,,,,ARG,SUI,0.626 ,0.240 ,0.134 ,0,0,0,0,0,0,0
