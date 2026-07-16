@@ -22,7 +22,7 @@ def load_train_data():
 df_train = load_train_data()
 
 if df is not None:
-    st.set_page_config(page_title="FIFA Predictions", layout="wide")
+    st.set_page_config(page_title="FIFA World Cup 2026 Predictions by konakalab", layout="wide")
     st.title("⚽ FIFAワールドカップ2026予測")
     st.caption(f"Developed by [@konakalab](https://x.com/konakalab)")
 
